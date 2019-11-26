@@ -351,17 +351,19 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     
 }
 
-@media screen and (min-width:320px) and (max-width:767px) {
+@media all and  (max-width:767px) {
     .nav_logo h1 img {width: 60%;}
     .nav_gnb {display: none;}
     .toggle {display: block;}
     .quick {display: none;}
-    .visual_txt { bottom: 400px;}
+    .visual_txt { bottom: 30%;}
     .vi_tit {font-size: 25px;}
     .vi_stit {font-size: 17px; line-height: 30px;}
-    #buttonList li{ left: 40%; top: -355px;}
+    #buttonList li{ left: 40%; top: -100px;}
     .scroll{display: none;}
     .scroll_txt {display: none;}
+    
+    .m_g_m {top: 150px;}
     
     .right {width: 100%;}
     .left {width: 100%; padding-bottom: 20px;}
@@ -409,11 +411,11 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .photo img {height: 400px; width: 100%;}
     .imgbtn {display: none;}
     .center_tab {width: 100%;}
-    .list {margin-top: 420px;}
-    .list h2 {font-size: 20px;}
-    .list h3 {font-size: 24px;}
+    .list {margin-top: 420px; position: absolute; top: -400px; z-index: 1;}
+    .list h2 {font-size: 16px;}
+    .list h3 {font-size: 18px; color: white; line-height: 30px;}
     .list p {display: none;}
-    .list a {margin-top: 20px; padding: 10px 30px;}    
+    .list a {margin-top: 20px; padding: 10px 30px; border: 1px solid #fff; color: white;}    
     
     
     
@@ -434,6 +436,8 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .copyright {padding-left: 0%; text-align: center; font-size: 13px;}
     .content { height: 100%;}
 }
+
+
 
 
 

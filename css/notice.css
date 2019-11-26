@@ -240,7 +240,7 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     
 }
 
-@media screen and (min-width:320px) and (max-width:767px) {
+@media all and (max-width:767px) {
     .nav_logo h1 img {width: 60%;}
     .nav_gnb {display: none;}
     .toggle {display: block;}
@@ -249,7 +249,7 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .key_image h2 {font-size: 28px; padding-top: 80px;}
     .key_image p {font-size: 22px;}
     
-    .con_t h3 {font-size: 28px;}
+    .m_txt h3 {font-size: 20px;}
     
     #TB .news {width: 100%; margin: 0 auto;}
 	#TB .news thead {border-top: 3px solid black; border-bottom: 1px solid grey;}
@@ -260,9 +260,10 @@ nav {width: 100%; position: relative; margin: 0 auto;}
 	#TB .news thead tr td.hdate {width: 20%;}
 	#TB .news tbody {margin: 0; padding: 0;}
     
-    #TB .searchbox .selectbox{font-size: 16px;}
-    #TB .searchbox .text{font-size: 16px; width: 60%;}
-    .searcharea .fa-search{ font-size: 16px;}
+    #TB .searchbox {margin-top: 10%; margin-bottom: 10%;}
+    #TB .searchbox .selectbox{font-size: 14px;}
+    #TB .searchbox .text{font-size: 14px; width: 60%;}
+    .searcharea .fa-search{ font-size: 14px;}
 
 	#TB .news tbody tr td {padding-top: 5%; padding-bottom: 5%;}
 	#TB .news tbody tr td.number {width: 10%; text-align: center; border-bottom: 1px solid grey; font-size: 11px;}
