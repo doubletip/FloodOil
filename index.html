@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>FLOOD OIL</title>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    
+    <script type="text/javascript">
+        window.onload = function () {
+            var elm = ".section";
+            $(elm).each(function (index) {
+                // 개별적으로 Wheel 이벤트 적용
+                $(this).on("mousewheel DOMMouseScroll", function (e) {
+                    e.preventDefault();
+                    var delta = 0;
+                    if (!event) event = window.event;
+                    if (event.wheelDelta) {
+                        delta = event.wheelDelta / 120;
+                        if (window.opera) delta = -delta;
+                    } 
+                    else if (event.detail)
+                        delta = -event.detail / 3;
+                    var moveTop = $(window).scrollTop();
+                    var elmSelecter = $(elm).eq(index);
+                    // 마우스휠을 위에서 아래로
+                    if (delta < 0) {
+                        if ($(elmSelecter).next() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).next().offset().top;
+                                /*$(".nav_gnb ul li a").css("color","black");
+                                $(".nav_info ul li a").css("color","black");*/
+                            }catch(e){}
+                        }
+                    // 마우스휠을 아래에서 위로
+                    } else {
+                        if ($(elmSelecter).prev() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).prev().offset().top;
+                               /* $(".nav_gnb ul li a").css("color","white");
+                                $(".nav_info ul li a").css("color","white");*/
+                            }catch(e){}
+                        }
+                    }
+                     
+                    // 화면 이동 0.8초(800)
+                    $("html,body").stop().animate({
+                        scrollTop: moveTop + 'px'
+                    }, {
+                        duration: 800, complete: function () {
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            var visual = $("#brandVisual > ul > li");
+            var button = $("#buttonList > ul > li");
+            var current = 0;
+            var setInervalId;
+
+            timer();
+            button.on({
+                click:function(){
+                    var tg = $(this);
+                    var i = tg.index();
+                    button.removeClass('on');
+                    tg.addClass('on');
+                    move(i);
+                }
+            });
+
+            function move(i){
+                if(current == i) return;
+
+                var current1 = visual.eq(current);
+                var next1 = visual.eq(i);
+
+                current1.css({left:0}).stop().animate({left:'-100%'});
+                next1.css({left:'100%'}).stop().animate({left:0});
+
+                current = i;
+            }
+
+            $("#next").on({
+                click:function(){
+                var i = current + 1;
+                    if(i > visual.length -1) i=0;
+
+                    button.eq(i).trigger('click');
+                    move(i);
+                }
+            });		
+
+            $("#prev").on({
+                click:function(){
+                var i = current - 1;
+                    if(i < 0) i= visual.length -1;
+
+                    button.eq(i).trigger('click');
+                    move(i);
+                }
+            });
+            var timer = setInterval(function(){
+        }, 1000);
+            
+        function timer(){
+            setIntervalId= setInterval(function(){
+                var n = current + 1;
+                if(n == visual.length){
+                    n=0;
+                }
+                button.eq(n).trigger("click");
+            },5000);
+        }
+                
+        $(window).scroll(function(){
+            var ht = $(window).height();
+            var scroll = $(window).scrollTop();
+            for(var i=0; i<4; i++){
+                if(scroll >=ht*(i) && scroll < ht*(i+1)){
+                    $(".quick>ul>li").removeClass("active");
+                    $(".quick>ul>li").eq(i).addClass("active");
+                };
+            }    
+        });
+        
+        $('.toggle').click(function(){
+                $(this).toggleClass('cng');
+                $(".m_gnb").stop().animate({left:"100%"},1000);
+                $(".toggle span").css("background-color","#000");
+                 
+        });
+                    
+        $(document).on("click", ".cng", function(){
+             $(".m_gnb").stop().animate({left:"0px"},1000);
+             $(".cng span").css("background-color","#fff");
+        }); 
+           
+            
+        $(".nav_gnb>ul>li").click(function(){
+            var j = $(this).index();
+            $(".quick>ul>li").removeClass("active");
+            $(".quick>ul>li").eq(j).addClass("active");
+        });
+
+        /*$(".m1").click(function(e){
+            var at = $(".s1").offset().top;
+            e.preventDefault();
+            $("html,body").animate({scrollTop:at},1500);
+        });
+        $(".m2").click(function(e){
+            var at = $(".s2").offset().top;
+            e.preventDefault();
+            $("html,body").animate({scrollTop:at},1500);
+        });
+        $(".m3").click(function(e){
+            var at = $(".s3").offset().top;
+            e.preventDefault();
+            $("html,body").animate({scrollTop:at},1500);
+        });
+        $(".m4").click(function(e){
+            var at = $(".s4").offset().top;
+            e.preventDefault();
+            $("html,body").animate({scrollTop:at},1500);
+        });*/
+
+
+        $(".quick>ul>li:nth-child(1)").click(function(e){
+            var move = $(".s1").offset().top;
+            e.preventDefault();
+            $("html,body").animate({scrollTop:move},1500);
+        });
+
+        $(".quick>ul>li:nth-child(2)").click(function(e){
+            var move = $(".s2").offset().top;
+            e.preventDefault();
+            $("html,body").animate({scrollTop:move},1500);
+        });
+
+        $(".quick>ul>li:nth-child(3)").click(function(e){
+            var move = $(".s3").offset().top;
+            e.preventDefault();
+            $("html,body").animate({scrollTop:move},1500);
+        });
+
+        $(".quick>ul>li:nth-child(4)").click(function(e){
+            var move = $(".s4").offset().top;
+            e.preventDefault();
+            $("html,body").animate({scrollTop:move},1500);
+        });
+        
+        $(".re_list1").mouseenter(function(){
+            $(".re_list1 .t_tit").css({"color":"#f15522","transition":"0.5s"});
+            $(".b1").css({"opacity":"1","transition":"0.5s"});
+         });
+            
+        $(".re_list1").mouseleave(function(){
+            $(".re_list1 .t_tit").css({"color":"black","transition":"0.5s"});
+            $(".b1").css({"opacity":"0","transition":"0.5s"});
+        });
+                
+        $(".re_list2").mouseenter(function(){
+            $(".re_list2 .t_tit").css({"color":"#f15522","transition":"0.5s"});
+            $(".b2").css({"opacity":"1","transition":"0.5s"});
+        });
+            
+        $(".re_list2").mouseleave(function(){
+            $(".re_list2 .t_tit").css({"color":"black","transition":"0.5s"});
+            $(".b2").css({"opacity":"0","transition":"0.5s"});
+        });
+                
+        $(".re_list3").mouseenter(function(){
+            $(".re_list3 .t_tit").css({"color":"#f15522","transition":"0.5s"});
+            $(".b3").css({"opacity":"1","transition":"0.5s"});
+        });
+            
+        $(".re_list3").mouseleave(function(){
+            $(".re_list3 .t_tit").css({"color":"black","transition":"0.5s"});
+             $(".b3").css({"opacity":"0","transition":"0.5s"});
+        });
+    
+    });
+	
+    $(function(){  
+        var current = 0;
+        //왼쪽 메뉴 선택시 이미지 변경
+        $(".left_tab ul li").click(function(e){
+            e.preventDefault();
+            $(".center_tab >.list").hide();
+            $(".imgbtn > .click").hide();
+            $(".right_tab > .tab_img").hide();
+            $(".right_tab > .tab_img").removeClass("set");
+            $(".imgbtn > .click").removeClass("set");
+            
+            var j = $(this).index();
+            $(".center_tab >.list").eq(j).fadeIn(500);                
+            $(".imgbtn > .click").eq(j).fadeIn(500);    
+            $(".right_tab > .tab_img").eq(j).fadeIn(500);
+            $(".right_tab > .tab_img").eq(j).addClass("set");
+            $(".imgbtn > .click").eq(j).addClass("set");
+            if (j == 0){
+                $(".photo>.image").attr('src', "images/jy1.jpg");    
+            }
+            current = 0;
+            
+            
+        });
+
+        $(".imgbtn .thumb").click(function(){
+            var i = $(this).index();
+            var img_file =$(".imgbtn>.set>.thumb>img").eq(i).attr('src');
+            $(".imgbtn > .set >.thumb>img").css("border","none");
+            $(".imgbtn > .set >.thumb>img").eq(i).css("border","2px solid #f15522");
+            $(".tab_img").css("display","none");
+            $(".right_tab >.i1").css("display","block");
+            $(".photo>.image").css("display","none");
+            $(".photo>.image").attr('src', img_file);
+            $(".photo>.image").stop().fadeIn(1000);
+            
+            current = i;
+        });
+
+        setInterval(function(){
+            $("#next").trigger('click');
+        }, 4000);
+        
+        $("#next").click(function(){
+            var $banner = $(".imgbtn > .set"); 
+            var bannerLength = $banner.find("img").length;
+       
+            if (current >= bannerLength){current = 0};
+   
+            var img_file = $(".imgbtn > .set >.thumb > img").eq(current).attr('src');
+
+            $(".imgbtn > .set >.thumb ").css("border","none");
+            $(".imgbtn > .set >.thumb ").eq(current).css("border","2px solid #f15522");
+            $(".tab_img").css("display","none");
+            $(".right_tab > .i1").css("display","block");
+            $(".photo>.image").css("display","none");
+            $(".photo>.image").attr('src', img_file);
+            $(".photo>.image").stop().fadeIn(1000);
+             current++; 
+        });    
+    }); 
+    </script>
+    
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <nav>
+                <div class="nav_logo"><h1><a href="index.html"><img src="images/logo.png" alt="로고이미지"></a></h1></div>
+                <div class="toggle">
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                </div>
+                <div class="nav_gnb">
+                    <ul>
+                        <li><a href="about1.html">About us</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="talent.html">Recruitment</a></li>
+                        <li><a href="notice.html">Notice</a></li>
+                    </ul>
+                </div>
+                <div class="m_gnb">
+                    <ul class="m_g_m">
+                        <li><a href="about1.html">About us</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="talent.html">Recruitment</a></li>
+                        <li><a href="notice.html">Notice</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="quick">
+            <ul>
+                <li class="active"><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+       
+        <div class="section s1">
+            <div id="brandVisual">        
+			    <ul>
+				    <li class="visual01"><div class="visual_txt"><p class="vi_tit">TAKE THE LEAD</p><span class="vi_stit">대한민국의 석유 에너지를 이끌어갑니다.</span></div></li>
+				    <li class="visual02"><div class="visual_txt"><p class="vi_tit">TECHNOLOGY</p><span class="vi_stit">지구의 가치를 높이는 기술</span></div></li>
+				    <li class="visual03"><div class="visual_txt"><p class="vi_tit">CONNECT</p><span class="vi_stit">길 위에서 집안까지 세상의 모든 만남을 만듭니다.</span></div></li>
+			    </ul>
+			
+			    <div id="buttonList">
+			        <ul>
+				        <li class="on"><a href="#">버튼1</a></li>
+				        <li><a href="#">버튼2</a></li>
+				        <li><a href="#">버튼3</a></li>
+			        </ul>
+		        </div>
+		    </div>
+		    
+		    <div class="scroll"><img src="images/scroll.png" alt="스크롤이미지"></div>
+		    <div class="scroll_txt">SCROLL DOWN</div>
+		
+        </div>
+        
+        
+        <div class="section s2">
+            <div class="content">
+                <div class="left">
+                    <div class="left_txt">
+                        <p>MEDIA</p>
+                        <span>다양한 매체에 소개된 FLOOD OIL의 새로운 소식을 한 눈에 확인해보세요.</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="tab">
+                        <a href="#">MEDIA</a>
+                    </div>
+                    <div class="right_cont">
+                        <ul>
+                            <li><a href=""><iframe  src="https://www.youtube.com/embed/McMpXYZhZt4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a></li>
+                            <li><a href=""><iframe src="https://www.youtube.com/embed/D3IgH_Is1oQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a></li>
+                            <li><a href=""><iframe width="1280" height="720" src="https://www.youtube.com/embed/EM16ABAUUWY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <ul>
+                        <li><img src="images/ex1.jpg" alt="메인company배경이미지"><p>COMPANY</p><span>아시아 · 태평양 지역에서 가장 경쟁력 있고 존경받는 에너지 · 화학 기업</span></li>
+                        <li><img src="images/ex2.jpg" alt="메인HISTORY배경이미지">
+                        <p>HISTORY</p><span>FLOOD OIL은 2009년 창사 이후 눈부신 성장을 거듭했습니다.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section s3">
+            <div class="content">
+                <div class="left_tab">
+                    <ul>
+                        <li><a href="#">정유사업</a></li>
+                        <li><a href="#">석유화학사업</a></li>
+                        <li><a href="#">윤활기유사업</a></li>
+                        <li><a href="#">제철화학사업</a></li>
+                        <li><a href="#">오일터미널사업</a></li>
+                    </ul>
+                </div>
+                <div class="content_area">
+                    <div class="center_tab">
+                        <div class="list l1">
+                            <h2>정유사업</h2>
+                            <h3>하루 65만 배럴의 원유를 정제해<br>석유제품을 생산하고 있습니다.</h3>
+                            <p>650,000배럴의 원유 정제능력을 갖춘 FLOOD OIL은 세계 각지에 석유제품을 수출하고
+전국 2400여개 주유소와 충전소를 운영하고 있습니다. 고도화된 기술 경쟁력(고도화비율 업계 최고 40.6%)을 갖추고
+글로벌 종합에너지기업으로 도약하고 있습니다.
+
+</p>
+                            <a href="#">more</a>
+                        </div>
+                        <div class="list l2">
+                            <h2>석유화학사업</h2>
+                            <h3>혼합자일렌 설비,방향족 설비로<br>석유화학 기초 원료를 생산하고 있습니다.</h3>
+                            <p>FLOOD OIL은 국내 정유사와 석유화학사 간 최초의 합작 법인입니다. 방향족 제품 생산공정의 주 원료인 MX(혼합자일렌) 대부분을 수입에 의존했던 두 회사는 2016년 FLOOD OIL 상업가동에 따라 원료 수급의 안정성을 제고할 수 있게 됐습니다.</p>
+                            <a href="#">more</a>
+                        </div>
+                        <div class="list l3">
+                            <h2>윤활기유사업</h2>
+                            <h3>친환경 윤활기유 제품과<br>산업용 윤활유를 만듭니다.</h3>
+                            <p>연간 생산 능력 100만 톤 규모의 윤활기유 공장을 가동하고 있습니다. 윤활기유는 FLOOD OIL 고도화공정에서 나오는 잔사유를 원료로 생산되어 자동차, 선박, 산업용 윤활유 완제품의 원료가 됩니다. FLOOD OIL은 친환경 윤활기유를 생산하고 있습니다.</p>
+                            <a href="#">more</a>
+                        </div>
+                        <div class="list l4">
+                            <h2>제철화학사업</h2>
+                            <h3>제철소와 정유시설의 부산물을 활용해<br>타이어 배합제,잉크의 원료 등을 생산합니다.</h3>
+                            <p>석탄에서 나오는 콜타르와 원유 정제과정에서 나오는 부산물로 연간 15만 톤의 카본블랙을 만듭니다. 카본블랙은 주로 타이어, 고무 등 강도를 높이는 배합제, 프린터 잉크 등 우리 실생활에 꼭 필요한 제품을 만드는데 쓰입니다.</p>
+                            <a href="#">more</a>
+                        </div>
+                        <div class="list l5">
+                            <h2>오일터미널사업</h2>
+                            <h3>업계최초 유류저장시설이며<br>동남권 최대의 물류기지 역할을 수행합니다.</h3>
+                            <p>2014년부터 전국 7개 저유소를 위탁운영하며 전국적인 네트워크를 갖추게 됐습니다. 국내는 물론 아시아를 오가는 석유/석유화학제품으로 저장사업의 범위를 확대하고 있습니다.
+
+</p>
+                            <a href="#">more</a>
+                        </div>
+                    </div>
+                    <div class="right_tab">
+                        <div class="tab_img i1 set">
+                            <div class="photo1 photo"><img src="images/jy1.jpg" alt="정유사업이미지" class="image"></div>
+                            <div class="photo2 photo"><img src="images/jy2.jpg" alt="정유사업이미지"></div>
+                            <div class="photo3 photo"><img src="images/jy3.jpg" alt="정유사업이미지"></div>
+                            <div class="photo4 photo"><img src="images/jy4.jpg" alt="정유사업이미지"></div>
+                        </div>
+                        
+                        <div class="tab_img i2">
+                            <div class="photo1 photo"><img src="images/sy3.jpg" alt="석유화학사업이미지"></div>
+                            <div class="photo2 photo"><img src="images/sy4.jpg" alt="석유화학사업이미지"></div>
+                            <div class="photo3 photo"><img src="images/sy5.jpg" alt="석유화학사업이미지"></div>
+                        </div>
+                        
+                        <div class="tab_img i3">
+                            <div class="photo1 photo"><img src="images/yh1.jpg" alt="윤활기유이미지"></div>
+                            <div class="photo2 photo"><img src="images/yh2.jpg" alt="윤활기유이미지"></div>
+                            <div class="photo3 photo"><img src="images/yh3.jpg" alt="윤활기유이미지"></div>
+                        </div>
+                        
+                        <div class="tab_img i4">
+                            <div class="photo1 photo"><img src="images/tire1.jpeg" alt="제철화학사업이미지"></div>
+                            <div class="photo2 photo"><img src="images/tire2.jpg" alt="제철화학사업이미지"></div>
+                        </div>
+                        
+                        <div class="tab_img i5">
+                            <div class="photo1 photo"><img src="images/terminal1.jpg" alt="오일터미널사업이미지"></div>
+                            <div class="photo2 photo"><img src="images/terminal2.jpg" alt="오일터미널사업이미지"></div>
+                            <div class="photo3 photo"><img src="images/terminal3.jpg" alt="오일터미널사업이미지"></div>
+                        </div>
+                    </div>
+                    <div class="imgbtn">
+                            <ul class="click1 click set">
+                                <li class="thumb"><img src="images/jy1.jpg" alt="정유사업이미지"></li>
+                                <li class="thumb"><img src="images/jy2.jpg" alt="정유사업이미지"></li>
+                                <li class="thumb"><img src="images/jy3.jpg" alt="정유사업이미지"></li>
+                                <li class="thumb"><img src="images/jy4.jpg" alt="정유사업이미지"></li>
+                            </ul>
+                            
+                            <ul class="click2 click">
+                                <li class="thumb"><img src="images/sy3.jpg" alt="석유화학사업이미지"></li>
+                                <li class="thumb"><img src="images/sy4.jpg" alt="석유화학사업이미지"></li>
+                                <li class="thumb"><img src="images/sy5.jpg" alt="석유화학사업이미지"></li>
+                            </ul>
+                            
+                            <ul class="click3 click">
+                                <li class="thumb"><img src="images/yh1.jpg" alt="윤활기유사업이미지"></li>
+                                <li class="thumb"><img src="images/yh2.jpg" alt="윤활기유사업이미지"></li>
+                                <li class="thumb"><img src="images/yh3.jpg" alt="윤활기유사업이미지"></li>
+                            </ul>
+                            
+                            <ul class="click4 click">
+                                <li class="thumb"><img src="images/tire1.jpeg" alt="제철화학사업이미지"></li>
+                                <li class="thumb"><img src="images/tire2.jpg" alt="제철화학사업이미지"></li>
+                            </ul>
+                            
+                            <ul class="click5 click">
+                                <li class="thumb"><img src="images/terminal1.jpg" alt="오일터미널사업이미지"></li>
+                                <li class="thumb"><img src="images/terminal2.jpg" alt="오일터미널사업이미지"></li>
+                                <li class="thumb"><img src="images/terminal3.jpg" alt="오일터미널사업이미지"></li>
+                            </ul>
+                    </div>
+                    <button id="next" style="position:absolute; left:100px;bottom:0; opacity:0">다음</button>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="section s4">
+            <div class="content">
+                <div class="container">
+                    <h2 class="talent">recruitment of talent</h2>
+                    <div class="re_list">
+                        <ul>
+                            <li class="re_list1">
+                                <img src="images/senier.png" alt="메인선배들의이야기이미지">
+                                <div class="list_txt">
+                                    <p class="t_tit">선배들의 이야기</p>
+                                    <p class="t_stxt">고생끝에 낙이온다! 열심히 하면 다 되요</p>
+                                    <p class="year">2018년 입사 설비기술 설비기술1팀 <span>이지원</span></p>
+                                </div>
+                                <div class="bar b1"></div>
+                            </li>
+                            <li class="re_list2">
+                                <img src="images/leadership.png" alt="메인인재상이미지">
+                                <div class="list_txt">
+                                    <p class="t_tit">인재상</p>
+                                    <p class="t_stxt">전문역량과 리더십을 겸비한 리더</p>
+                                </div>
+                                <div class="bar b2"></div>
+                            </li>
+                            <li class="re_list3">
+                                <img src="images/talent.png" alt="메인직무소개이미지">
+                                <div class="list_txt">
+                                    <p class="t_tit">직무소개</p>
+                                    <p class="t_stxt">FLOOD OIL의 다양한 직무를 소개합니다.</p>
+                                </div>
+                                <div class="bar b3"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer_logo">
+                        <h2><img src="images/logo.png" alt="푸터로고"></h2>
+                    </div>
+                    <div class="footer_container">
+                        <div class="footer_list">
+                            <a href="">이용약관</a>
+                            <a href="">개인정보처리방침</a>
+                            <a href="">사이트맵</a>
+                        </div>
+                        <div class="footer_info">
+                            <ul>
+                                <li>서울시 영등포구 당산동</li>
+                                <li>TEL : 12 - 3456 - 7890</li>
+                                <li>사업자등록번호 : 789-12-34567</li>
+                            </ul>
+                        </div>
+                        <p class="copyright">(C) FLOOD OIL CO. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

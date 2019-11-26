@@ -1,0 +1,314 @@
+@charset "utf-8";
+@font-face {
+            font-family: 'NanumSquareR';
+            src: url('../fonts/NanumSquareR.ttf'),
+                url('../fonts/NanumSquareR.eot');
+}
+@font-face {
+            font-family: 'NanumSquareB';
+            src: url('../fonts/NanumSquareB.ttf'),
+                url('../fonts/NanumSquareB.eot');
+}
+@font-face {
+            font-family: 'NanumSquareEB';
+            src: url('../fonts/NanumSquareEB.ttf'),
+                url('../fonts/NanumSquareB.eot');
+}
+@font-face {
+            font-family: 'Montserrat-ExtraBold';
+            src:url('../fonts/Montserrat-ExtraBold.otf');
+}
+
+html,body{ margin:0; padding:0; width:100%; height:100%; font-family:'NanumSquareR'; }
+#wrap {width: 100%; position: relative;}
+.section{ width:100%; height:100%; position:relative; color:#ffffff;}
+.content {position: relative; top: 120px; width: 100%; height: 90%;}
+
+/*header*/
+header{position: fixed; width: 100%; height: 120px; z-index: 5; background: white; border-bottom:1px solid #eee;}
+nav {width: 100%; position: relative; margin: 0 auto;}
+
+/*header logo*/
+.nav_logo {position: absolute; left: 1%;}
+.nav_logo h1 {margin-top: 30px; color: white;}
+.nav_logo h1 img {width: 70%;}
+
+/*header gnb*/
+.nav_gnb {position: absolute; right: 1%;}
+.nav_gnb ul {position: relative;}
+.nav_gnb ul:after {display: block; clear: both; content:"";}
+.nav_gnb ul li {float:left;}
+.nav_gnb ul li a {display: inline-block; margin-right: 50px; line-height: 120px; color: black; font-size: 16px;}
+
+/*header mobile gnb*/
+.m_gnb{position: absolute; left: 100%; width: 100%; height: 100vh; background:darkorange; z-index: 500;}
+.toggle {text-align: right; font-size: 30px; height: 120px; line-height: 120px; position: absolute; right: 5%; z-index: 9840; display: none;}
+.toggle span {
+  display: block;
+  background: #000;
+  width: 42px;
+  height: 4px;
+  border-radius: 3px;
+  transition: 0.25s margin 0.25s, 0.25s transform;
+}
+.toggle span:nth-child(1) {
+    margin-top: 50px;
+    margin-bottom: 8px;
+}
+.toggle span:nth-child(3) {
+    margin-top: 8px;
+}
+.cng {height: 120px; line-height: 120px; position: absolute; right: 5%; z-index: 9840;display:none;}
+.cng span {
+  display: block;
+  background: #000;
+  width: 42px;
+  height: 4px;
+  border-radius: 3px;
+  transition: 0.25s margin 0.25s, 0.25s transform;
+}
+.cng span {
+    transition: 0.25s margin, 0.25s transform 0.25s;
+}
+.cng span:nth-child(1) {
+  margin-top: 60px;
+  margin-bottom: -4px;
+    transform: rotate(45deg);
+}
+.cng span:nth-child(2) {
+    transform: rotate(45deg);
+}
+.cng span:nth-child(3) {
+  margin-top: -4px;
+    transform: rotate(135deg);
+}
+
+.m_g_m {position: absolute; top: 200px; width: 100%;}
+.m_g_m li { width: 100%; line-height: 100px; }
+.m_g_m li a {display: block; text-align: center; font-size: 26px; color: white; font-weight: bold;}
+
+
+/*container*/
+.container {position: relative; width: 100%; top: 120px;}
+
+/*key_image*/
+.key_image {position: relative; width: 100%; height: 500px; background: url(../images/notice/notice.png) no-repeat; background-attachment: fixed; background-size: cover; background-position: bottom; }
+.key_image h2 {text-align: center; color: #fff; font-size: 36px; line-height: 150px; padding-top: 100px;}
+.key_image p {text-align: center; color: #fff; font-size: 30px;}
+
+/*info*/
+.info {width: 100%; position: relative; margin: 0 auto;}
+
+
+/*breadcrumb*/
+.breadcrumb {width: 80%; position: relative; margin: 0 auto; padding-top: 50px;}
+.breadcrumb span {font-size: 18px;}
+
+/*m_txt*/
+.m_txt h3 {font-size: 36px; text-align: center; margin-top: 50px;}
+.m_txt h3:after {content:""; display: block; width: 50px; height: 5px; background: #f15522; margin: 0 auto; margin-top: 20px;}
+
+/*table*/
+#TB {position: relative; width: 90%; margin: 0 auto; }
+	
+#TB .searchbox {width: 100%; margin: 0 auto; text-align: center; margin-bottom: 5%; margin-top: 5%;}
+#TB .searchbox .selectbox {padding-left: 1.5%; padding-right: 2%; border: 0; font-size: 14px;height: 30px; border-bottom: 1px solid #251e1e;}
+#TB .searchbox .text {width: 40%; border: 0; font-size: 14px;  color: black; border-bottom: 1px solid #251e1e; height: 27px; margin-left: 1%; text-indent: 14px;}
+#TB .searchbox .text::placeholder {color: black;}
+.searcharea .fa-search{cursor: pointer; font-size: 18px; margin-left: -1.5%;}
+
+
+#TB .news {width: 100%;}
+#TB .news thead {border-top: 5px solid #f15522; border-bottom: 2px solid grey;}
+#TB .news thead tr {}
+#TB .news thead tr td {font-weight: bold; font-size: 14px; padding-top: 1.2%; padding-bottom: 1.2%; padding-right: 1%; padding-left: 1%; text-align: center;}
+#TB .news thead tr td.hnumber {width: 20%; }
+#TB .news thead tr td.hname {width: 80%;}
+#TB .news thead tr td.hdate {width: 20%;}
+#TB .news tbody {margin: 0; padding: 0;}
+        
+#TB .news tbody tr td {padding-top: 1.2%; padding-bottom: 1.2%;}
+#TB .news tbody tr td.number {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 16px;}
+#TB .news tbody tr td.name {width: 70%; text-align: left; padding-left: 2%; border-bottom: 1px solid grey; font-size: 16px; font-weight: bold;}
+#TB .news tbody tr td.date {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 14px;}
+
+#TB .page_num {width: 100%; text-align: center; margin: 0 auto; display: inline-block; position: relative; margin-top: 2%; margin-bottom: 5%;}
+#TB .page_num .front {display: inline-block; width: 36px; height: 35px; padding-top: 5px; background: url(../images/notice/front.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+#TB .page_num .prev {display: inline-block; width: 36px; height: 35px; background: url(../images/notice/prev.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+#TB .page_num .num_1 {display: inline-block; width: 36px; height: 35px; line-height: 35px; margin-right: 1%;}
+#TB .page_num .num_2 {display: inline-block; width: 36px; height: 35px; line-height: 35px; margin-right: 1%;}
+#TB .page_num .num_3 {display: inline-block; width: 36px; height: 35px; line-height: 35px; margin-right: 1%;}
+#TB .page_num .num_4 {display: inline-block; width: 36px; height: 35px; line-height: 35px; margin-right: 1%;}
+#TB .page_num .num_5 {display: inline-block; width: 36px; height: 35px; line-height: 35px; margin-right: 1%;}
+#TB .page_num .next {display: inline-block; width: 36px; height: 35px; background: url(../images/notice/next.png); margin-right: 1%; position: relative; top: 10px; background-size: cover;}
+#TB .page_num .back {display: inline-block; width: 36px; height: 35px; background: url(../images/notice/back.png); position: relative; top: 10px; background-size: cover;}
+.onClick{border: 1px solid black; font-weight: bold;}
+.review_title{font-size: 24px; text-align: center; margin-top: 100px;}
+
+
+
+
+
+
+
+/*footer*/
+.footer {height: 160px; background:black; width: 100%; position: relative; bottom: 0; color: white;}
+.footer:after {display: block; clear: both; content:"";}
+.footer_logo {float:left; margin-top: 50px; width: 20%; padding-left: 5%;}
+.footer_container {width: 80%; float:left; margin-top: 50px;}
+.footer_list { padding-left: 5%;font-size: 18px; font-weight: bold;}
+.footer_info {padding-left: 5%; font-size: 16px; line-height: 40px;}
+.footer_info ul {}
+.footer_info ul:after {content:""; display: block; clear: both;}
+.footer_info ul li {float:left; font-size: 16px; line-height: 40px; margin-right: 15px;}
+
+.copyright {padding-left: 5%;}
+
+
+
+
+
+@media screen and (min-width:1024px) and (max-width:1440px) {
+    .key_image h2 {font-size: 32px;}
+    .key_image p {font-size: 26px;}
+    
+    .breadcrumb span {font-size: 17px;}
+    .breadcrumb i {font-size: 17px;}
+    
+    .m_txt h3 {font-size: 32px;}
+    
+    #TB .news {width: 90%; margin: 0 auto;}
+    #TB .news thead {border-top: 3px solid black; border-bottom: 1px solid grey;}
+	#TB .news thead tr td {font-weight: bold; font-size: 16px; padding-top: 1%; padding-bottom: 1%; padding-right: 1%; padding-left: 1%; text-align: center;}
+	#TB .news thead tr td.hnumber {width: 15%;}
+	#TB .news thead tr td.hname {width: 70%;}
+	#TB .news thead tr td.hdate {width: 15%;}
+	#TB .news tbody {margin: 0; padding: 0;}
+	#TB .news tbody tr td {padding-top: 1.5%; padding-bottom: 1.5%;}
+	#TB .news tbody tr td.number {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 1.14px;}
+	#TB .news tbody tr td.name {width: 70%; text-align: left; padding-left: 2%; border-bottom: 1px solid grey; font-size: 1.14px;}
+	#TB .news tbody tr td.date {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 1.14px;} 
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .nav_logo h1 img {width: 60%;}
+    .nav_gnb ul li a { margin-right: 40px; font-size: 15px;}
+    
+    .key_image {height: 400px;}
+    .key_image h2 {font-size: 30px;}
+    .key_image p {font-size: 24px;}
+    
+    .m_txt h3 {font-size: 30px;}
+    
+    #TB .news {width: 90%; margin: 0 auto;}
+	#TB .news thead {border-top: 3px solid black; border-bottom: 1px solid grey;}
+	
+	#TB .news thead tr td {font-weight: bold; font-size: 16px; padding-top: 1%; padding-bottom: 1%; padding-right: 1%; padding-left: 1%; text-align: center;}
+	#TB .news thead tr td.hnumber {width: 15%;}
+	#TB .news thead tr td.hname {width: 70%;}
+	#TB .news thead tr td.hdate {width: 15%;}
+	#TB .news tbody {margin: 0; padding: 0;}
+
+	#TB .news tbody tr td {padding-top: 1.5%; padding-bottom: 1.5%;}
+	#TB .news tbody tr td.number {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 16px;}
+	#TB .news tbody tr td.name {width: 70%; text-align: left; padding-left: 2%; border-bottom: 1px solid grey; font-size: 16px;}
+	#TB .news tbody tr td.date {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 16px;}
+    
+    #TB .page_num .front {display: inline-block; width: 25px; height: 24px; padding-top: 5px; background: url(../images/notice/front.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+    
+    #TB .page_num .prev {display: inline-block; width: 25px; height: 24px; background: url(../images/notice/prev.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+    
+    #TB .page_num .num_1 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 12px;}
+
+    
+    #TB .page_num .num_2 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 12px;}
+    
+    #TB .page_num .num_3 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 12px;}
+    
+    #TB .page_num .num_4 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 12px;}
+    
+    #TB .page_num .num_5 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 12px;}
+    
+    #TB .page_num .next {display: inline-block; width: 25px; height: 24px; background: url(../images/notice/next.png); margin-right: 1%; position: relative; top: 10px; background-size: cover;}
+    
+    #TB .page_num .back {display: inline-block; width: 25px; height: 24px; background: url(../images/notice/back.png); position: relative; top: 10px; background-size: cover;}
+    
+    
+    .footer_list {font-size: 15px;}
+    .footer_info ul li {font-size: 13px;}
+    .copyright {font-size: 13px;}
+    
+}
+
+@media screen and (min-width:400px) and (max-width:767px) {
+    .nav_logo h1 img {width: 60%;}
+    .nav_gnb {display: none;}
+    .toggle {display: block;}
+    
+    .key_image {height: 400px;}
+    .key_image h2 {font-size: 28px; padding-top: 80px;}
+    .key_image p {font-size: 22px;}
+    
+    .con_t h3 {font-size: 28px;}
+    
+    #TB .news {width: 100%; margin: 0 auto;}
+	#TB .news thead {border-top: 3px solid black; border-bottom: 1px solid grey;}
+
+	#TB .news thead tr td {font-weight: bold; font-size: 16px; padding-bottom: 1%; padding-right: 1%; padding-left: 1%; text-align: center;}
+	#TB .news thead tr td.hnumber {width: 10%;}
+	#TB .news thead tr td.hname {width: 70%;}
+	#TB .news thead tr td.hdate {width: 20%;}
+	#TB .news tbody {margin: 0; padding: 0;}
+    
+    #TB .searchbox .selectbox{font-size: 16px;}
+    #TB .searchbox .text{font-size: 16px; width: 60%;}
+    .searcharea .fa-search{ font-size: 16px;}
+
+	#TB .news tbody tr td {padding-top: 5%; padding-bottom: 5%;}
+	#TB .news tbody tr td.number {width: 10%; text-align: center; border-bottom: 1px solid grey; font-size: 11px;}
+	#TB .news tbody tr td.name {width: 70%; text-align: left; padding-left: 2%; border-bottom: 1px solid grey; font-size: 11px;}
+	#TB .news tbody tr td.date {width: 20%; text-align: center; border-bottom: 1px solid grey; font-size: 11px;}
+    
+    #TB .page_num .front {display: inline-block; width: 25px; height: 24px; padding-top: 5px; background: url(../images/notice/front.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+    
+    #TB .page_num .prev {display: inline-block; width: 25px; height: 24px; background: url(../images/notice/prev.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+    
+    #TB .page_num .num_1 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 12px;}
+    
+    #TB .page_num .num_2 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 12px;}
+    
+    #TB .page_num .num_3 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 12px;}
+    
+    #TB .page_num .num_4 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 12px;}
+    
+    #TB .page_num .num_5 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 12px;}
+    
+    #TB .page_num .next {display: inline-block; width: 25px; height: 24px; background: url(../images/notice/next.png); margin-right: 1%; position: relative; top: 10px; background-size: cover;}
+    
+    #TB .page_num .back {display: inline-block; width: 25px; height: 24px; background: url(../images/notice/back.png); position: relative; top: 10px; background-size: cover;}
+    
+    
+    .footer {position: relative; height: 316px;}
+    .footer_container {width: 100%;}
+    .footer_logo {float:none; width: 100%; text-align: center;}
+    .footer_logo img {padding-top: 10px;}
+    .footer_list {padding-left: 0%; text-align: center; font-size: 15px; line-height: 30px;}
+    .footer_info ul li {font-size: 13px; width: 100%; text-align: center; line-height: 25px;}
+    .copyright {padding-left: 0%; text-align: center; font-size: 13px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

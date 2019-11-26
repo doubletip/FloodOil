@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>FLOOD OIL > Business</title>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/notice.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    
+    
+    
+    <script>     
+        $(document).ready(function(){
+            
+            $(".nav_gnb>ul>li").click(function(){
+                var j = $(this).index();
+                $(".quick>ul>li").removeClass("active");
+                $(".quick>ul>li").eq(j).addClass("active");
+            }); 
+            
+            $('.toggle').click(function(){
+                $(this).toggleClass('cng');
+                $(".m_gnb").stop().animate({left:"100%"},1000);
+                $(".toggle span").css("background-color","#000");
+                 
+            });
+            
+            $(document).on("click", ".cng", function(){
+                $(".m_gnb").stop().animate({left:"0px"},1000);
+                $(".cng span").css("background-color","#fff");
+            });
+            
+            var i=0;
+            $(".n1").show();
+            $(".num_1").addClass("onClick");
+            $(".num_2").removeClass("onClick");
+            $(".n2").hide();
+
+            $(".front").click(function(e){
+                i = 0;
+                e.preventDefault();
+                $(".n1").show();
+                $(".num_1").addClass("onClick");
+                $(".num_2").removeClass("onClick");
+                $(".n2").hide();
+            });
+
+        $(".prev").click(function(e){
+            e.preventDefault();
+            switch(i){
+                case 1:
+                    i = 0;
+                    $(".n1").show();
+                    $(".num_1").addClass("onClick");
+                    $(".num_2").removeClass("onClick");
+                    $(".num_3").removeClass("onClick");
+                    $(".num_4").removeClass("onClick");
+                    $(".num_5").removeClass("onClick");
+                    $(".n2").hide();
+                    $(".n3").hide();
+                    $(".n4").hide();
+                    $(".n5").hide();
+                    break;
+                case 2:
+                    i = 1;
+                    $(".n2").show();
+                    $(".num_2").addClass("onClick");
+                    $(".num_1").removeClass("onClick");
+                    $(".num_3").removeClass("onClick");
+                    $(".num_4").removeClass("onClick");
+                    $(".num_5").removeClass("onClick");
+                    $(".n1").hide();
+                    $(".n3").hide();
+                    $(".n4").hide();
+                    $(".n5").hide();
+                    break;
+                
+
+            }
+                    
+        });
+        
+        $(".num_1").click(function(e){
+            e.preventDefault();
+            i = 0;
+            $(".n1").show();
+            $(".num_1").addClass("onClick");
+            $(".num_2").removeClass("onClick");
+            $(".n2").hide();
+        });
+        $(".num_2").click(function(e){
+            e.preventDefault();
+            i = 1;
+            $(".n2").show();
+            $(".num_2").addClass("onClick");
+            $(".num_1").removeClass("onClick");
+            $(".n1").hide();
+        });
+        
+        
+        
+        
+        $(".next").click(function(e){
+            e.preventDefault();
+            switch(i){
+                case 0:
+                    i = 1;
+                    $(".n2").show();
+                    $(".num_2").addClass("onClick");
+                    $(".num_1").removeClass("onClick");
+                    $(".n1").hide();
+                    break; 
+         }
+            
+        $(".back").click(function(e){
+            i = 1;
+            e.preventDefault();
+            $(".n2").show();
+            $(".num_2").addClass("onClick");
+            $(".num_1").removeClass("onClick");
+            $(".n1").hide();
+        });
+            
+            
+            
+        });
+        });  
+                          
+    </script>
+    
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <nav>
+                <div class="nav_logo"><h1><a href="index.html"><img src="images/logo.png" alt="로고이미지"></a></h1></div>
+                <div class="toggle">
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                    </div>
+                <div class="nav_gnb">
+                    <ul>
+                        <li><a href="about1.html">About us</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="talent.html">Recruitment</a></li>
+                        <li><a href="notice.html">Notice</a></li>
+                    </ul>
+                </div>
+                <div class="m_gnb">
+                    <ul class="m_g_m">
+                        <li><a href="about1.html">About us</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="talent.html">Recruitment</a></li>
+                        <li><a href="notice.html">Notice</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+       
+        <div class="container">
+            <div class="key_image">
+                <h2>NOTICE</h2>
+                <p>FLOOD OIL의 공지사항을 확인해보세요.</p>
+            </div>
+            
+            <div class="info">
+                <div class="breadcrumb">
+                    <i class="fas fa-home"></i>&nbsp;&nbsp;<span>> Notice</span>
+                </div>
+                <div class="m_txt">
+                    <h3>Notice</h3>
+                </div>            
+            </div>
+            
+            <div id="TB">
+                <div class="searchbox">
+    				<form action="post" class="searcharea">
+    					<fieldset>
+    						<legend>게시물검색</legend>
+    						<select name="select1" id="select1" class="selectbox">
+    							<option value>전체</option>
+    							<option value="1">제목</option>
+    							<option value="2">내용</option>
+    						</select>
+    						<input type="text" class="text" title="검색어" placeholder="검색어를 입력하세요.">
+    						<i class="fa fa-search"></i>
+    					</fieldset>
+    				</form>
+    			</div>
+                
+                
+    			<table class="news n1">
+    				<thead>
+    					<tr>
+    						<td class="hnumber">NO</td>
+    						<td class="hname">제목</td>
+    						<td class="hdate">작성일</td>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<tr>
+    						<td class="number">20</td>
+    						<td class="name">2019 하반기 공채 채용 합격자 안내</td>
+    						<td class="date">2019 - 11 - 24</td>
+    					</tr>
+    					<tr>
+    						<td class="number">19</td>
+    						<td class="name">2019 하반기 공채 채용 안내</td>
+    						<td class="date">2019 - 11 - 1</td>
+    					</tr>
+    					<tr>
+    						<td class="number">18</td>
+    						<td class="name">FLOOD OIL YOUTUBE 채널 개설</td>
+    						<td class="date">2019 - 10 - 25</td>
+    					</tr>
+    					<tr>
+    						<td class="number">17</td>
+    						<td class="name">저소득층을 위한 봉사활동</td>
+    						<td class="date">2019 - 10 - 7</td>
+    					</tr>
+    					<tr>
+    						<td class="number">16</td>
+    						<td class="name">FLOOD OIL 5기 대학생 서포터즈 발대식</td>
+    						<td class="date">2019 - 9 - 2</td>
+    					</tr>
+    					<tr>
+    						<td class="number">15</td>
+    						<td class="name">사우디아라비아 최대 석유 회사와의 계약 체결</td>
+    						<td class="date">2019 - 7 - 12</td>
+    					</tr>
+    					<tr>
+    						<td class="number">14</td>
+    						<td class="name">태양광 발전사업 진출</td>
+    						<td class="date">2019 - 6 - 29</td>
+    					</tr>
+    					<tr>
+    						<td class="number">13</td>
+    						<td class="name">FLOOD OIL 강원도 평창에 정유단지 건설 확정</td>
+    						<td class="date">2019 - 5 - 5</td>
+    					</tr>
+    					<tr>
+    						<td class="number">12</td>
+    						<td class="name">어린이를 위한 작은 선물</td>
+    						<td class="date">2019 - 5 - 5</td>
+    					</tr>
+    					<tr>
+    						<td class="number">11</td>
+    						<td class="name">FLOOD OIL 4기 대학생 서포터즈 발대식</td>
+    						<td class="date">2019 - 3 - 2</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    			
+    			<table class="news n2">
+    				<thead>
+    					<tr>
+    						<td class="hnumber">NO</td>
+    						<td class="hname">제목</td>
+    						<td class="hdate">작성일</td>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<tr>
+    						<td class="number">10</td>
+    						<td class="name">FLOOD OIL 4기 대학생 서포터즈 모집 안내</td>
+    						<td class="date">2019 - 2 - 3</td>
+    					</tr>
+    					<tr>
+    						<td class="number">9</td>
+    						<td class="name">일본기업과의 계약 성립</td>
+    						<td class="date">2019 - 1 - 10</td>
+    					</tr>
+    					<tr>
+    						<td class="number">8</td>
+    						<td class="name">매출 30조 달성</td>
+    						<td class="date">2018 - 12 - 31</td>
+    					</tr>
+    					<tr>
+    						<td class="number">7</td>
+    						<td class="name">홈페이지 리뉴얼 안내</td>
+    						<td class="date">2018 - 12 - 30</td>
+    					</tr>
+    					<tr>
+    						<td class="number">6</td>
+    						<td class="name">겨울맞이 독거노인 연탄 배달 봉사활동</td>
+    						<td class="date">2018 - 11 - 17</td>
+    					</tr>
+    					<tr>
+    						<td class="number">5</td>
+    						<td class="name">FLOOD OIL 3기 대학생 서포터즈 발대식</td>
+    						<td class="date">2018 - 9 - 1</td>
+    					</tr>
+    					<tr>
+    						<td class="number">4</td>
+    						<td class="name">FLOOD OIL 3기 대학생 서포터즈 모집 안내</td>
+    						<td class="date">2018 - 8 - 3</td>
+    					</tr>
+    					<tr>
+    						<td class="number">3</td>
+    						<td class="name">FLOOD OIL 신임 사장 취임</td>
+    						<td class="date">2018 - 6 - 20</td>
+    					</tr>
+    					<tr>
+    						<td class="number">2</td>
+    						<td class="name">노사갈등 원만한 해결</td>
+    						<td class="date">2018 - 3 - 15</td>
+    					</tr>
+    					<tr>
+    						<td class="number">1</td>
+    						<td class="name">FLOOD OIL 페이스북 개설</td>
+    						<td class="date">2018 - 2 - 1</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    			
+    			
+    			
+    			
+    			
+    			
+    			<div class="page_num">
+    				<a href="#" class="front">
+    				</a>
+    				<a href="#" class="prev">
+    				</a>
+    				<a href="#" class="num_1">1</a>
+    				<a href="#" class="num_2">2</a>
+    				<a href="#" class="next">
+    				</a>
+    				<a href="#" class="back">
+    				</a>
+    			</div>
+    		</div>
+             
+            
+            <div class="footer">
+                <div class="footer_logo">
+                    <h2><img src="images/logo.png" alt="푸터이미지"></h2>
+                </div>
+                <div class="footer_container">
+                    <div class="footer_list">
+                        <a href="">이용약관</a>
+                        <a href="">개인정보처리방침</a>
+                        <a href="">사이트맵</a>
+                    </div>
+                    <div class="footer_info">
+                        <ul>
+                            <li>서울시 영등포구 당산동</li>
+                            <li>TEL : 12 - 3456 - 7890</li>
+                            <li>사업자등록번호 : 789-12-34567</li>
+                        </ul>
+                    </div>
+                    <p class="copyright">(C) FLOOD OIL CO. ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

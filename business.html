@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>FLOOD OIL > Business</title>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/business.css">
+    <link rel="stylesheet" href="css/border.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    
+    
+    
+    <script>     
+        $(document).ready(function(){
+            $('.wrapper').mouseenter(function() {
+            $(this).removeClass('active');
+            setTimeout(function(){
+              $(this).addClass('temp');
+            },500);
+        });
+        $('.wrapper').mouseleave(function() {
+          $(this).addClass('active');
+          $(this).removeClass('temp');
+        });
+            
+            $(".nav_gnb>ul>li").click(function(){
+                var j = $(this).index();
+                $(".quick>ul>li").removeClass("active");
+                $(".quick>ul>li").eq(j).addClass("active");
+            }); 
+            
+            $('.toggle').click(function(){
+                $(this).toggleClass('cng');
+                $(".m_gnb").stop().animate({left:"100%"},1000);
+                $(".toggle span").css("background-color","#000");
+                 
+            });
+            
+            $(document).on("click", ".cng", function(){
+                $(".m_gnb").stop().animate({left:"0px"},1000);
+                $(".cng span").css("background-color","#fff");
+            });
+            
+            $(window).scroll(function(){
+                var sct = $(window) .scrollTop();
+                var con1info = $(".con_1_info").offset().top-1000;
+                var con2info = $(".con_2_info").offset().top-1000;
+                var con3info = $(".con_3_info").offset().top-1000;
+                var con4info = $(".con_4_info").offset().top-1000;
+                var con5info = $(".con_5_info").offset().top-1000;
+                
+                
+                var con2txt =$(".con_2_txt").offset().top-800;
+                
+                
+               
+                if(sct > con1info){
+                    $(".con_1_info").css({"transition":"0.5s","opacity":"1","left":"0"});
+                }
+                
+                
+                if(sct > con2info){
+                    $(".con_2_info").css({"transition":"0.5s","opacity":"1","right":"0"});
+                }
+                
+                if(sct > con3info){
+                    $(".con_3_info").css({"transition":"0.5s","opacity":"1","left":"0"});
+                }
+                
+                if(sct > con4info){
+                    $(".con_4_info").css({"transition":"0.5s","opacity":"1","right":"0"});
+                }
+                
+                if(sct > con5info){
+                    $(".con_5_info").css({"transition":"0.5s","opacity":"1","left":"0"});
+                }
+            });
+            
+        });
+                          
+    </script>
+    <style>
+        
+    </style>
+    
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <nav>
+                <div class="nav_logo"><h1><a href="index.html"><img src="images/logo.png" alt="로고이미지"></a></h1></div>
+                <div class="toggle">
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                    </div>
+                <div class="nav_gnb">
+                    <ul>
+                        <li><a href="about1.html">About us</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="talent.html">Recruitment</a></li>
+                        <li><a href="notice.html">Notice</a></li>
+                    </ul>
+                </div>
+                <div class="m_gnb">
+                    <ul class="m_g_m">
+                        <li><a href="about1.html">About us</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="talent.html">Recruitment</a></li>
+                        <li><a href="notice.html">Notice</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+       
+        <div class="container">
+            <div class="key_image">
+                <h2>Business</h2>
+                <p>아시아 · 태평양 지역에서 가장 경쟁력 있고 존경받는 에너지 · 화학 기업</p>
+            </div>
+            
+            <div class="info">
+                <div class="breadcrumb">
+                    <i class="fas fa-home"></i><span>> Business</span>
+                </div>
+                
+                <div class="con_c">
+                    <div class="con_1">
+                        <div class="bgimg">
+                            <div class="wrapper">
+                                <img src="images/business/refining.png" alt="">
+                            </div>
+                            <div class="con_1_txt">
+                                <h3>Oil <span class="impact">Refining Business</span></h3>
+                                <h4>정유사업</h4>
+                            </div>
+                        </div>
+                        <div class="con_1_info">
+                            <p>원유공급선 다변화</p>
+                            <span>안정적인 원유 수급을 위해 원유 생산량이 풍부한 중동 산유국의 원유를 장기 계약 및 현물 계약으로 도입하고 있습니다. 중동에 편중된 원유 수입을 기타 지역으로 다변화하기 위해 남미 멕시코에서도 원유를 수입하고 있습니다.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="con_2">
+                        <div class="bgimg">
+                            <div class="wrapper">
+                                <img src="images/business/petrochemical.png" alt="">
+                            </div>
+                            <div class="con_2_txt">
+                                <h3><span class="impact">Petrochemical</span> Business</h3>
+                                <h4>석유화학사업</h4>
+                            </div>
+                        </div>
+                        <div class="con_2_info">
+                            <p>코스모 석유와 방향족 사업 합작</p>
+                            <span>FLOOD OIL은 일본 코스모석유의 합작 회사입니다. 방향족 석유화학제품을 생산하고 있으며 이는 합성섬유, 각종 플라스틱, 휘발유 첨가제 등의 기초 원료가 됩니다. 2013년 제2 방향족 공정이 상업가동을 시작하면서 FLOOD OIL 연간 142만 톤 규모의 생산 설비를 갖추게 됐습니다. FLOOD OIL과 일본 코스모석유로부터 안정적으로 원료를 조달하게 되어 FLOOD OIL의 경쟁력은 한층 강화되고 있습니다.</span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="con_3">
+                        <div class="bgimg">
+                            <div class="wrapper">
+                                <img src="images/business/lubricating.png" alt="">
+                            </div>
+                            <div class="con_3_txt">
+                                <h3>Lubricating <span class="impact">Business</span></h3>
+                                <h4>윤활기유사업</h4>
+                            </div>
+                        </div>
+                        <div class="con_3_info">
+                            <p>쉘과 친환경 윤활기유 사업 합작</p>
+                            <span>FLOOD OIL과 쉘의 합작 회사로 연간 생산 능력 100만 톤 규모의 윤활기유 공장을 가동하고 있습니다. 윤활기유는 FLOOD OIL 고도화공정에서 나오는 잔사유를 원료로 생산되어 자동차, 선박, 산업용 윤활유 완제품의 원료가 됩니다. FLOOD OIL은 Group Ⅱ 70 Neutral, Group Ⅱ 150 Neutral, Group Ⅱ 500 Neutral 등 친환경 윤활기유를 생산하고 있습니다.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="con_4">
+                        <div class="bgimg">
+                            <div class="wrapper">
+                                <img src="images/business/tire.png" alt="">
+                            </div>
+                            <div class="con_4_txt">
+                                <h3><span class="impact">Ferrous Chemistry</span> Business</h3>
+                                <h4>제철화학사업</h4>
+                            </div>
+                        </div>
+                        <div class="con_4_info">
+                            <p>OCI와 손잡고 제철화학 사업 진출</p>
+                            <span>FLOOD OIL은 제철화학사업을 추진하기 위해 OCI와 함께 설립한 법인입니다. 석탄에서 나오는 콜타르와 원유 정제과정에서 나오는 부산물로 연간 15만 톤의 카본블랙을 만듭니다. 카본블랙은 주로 타이어, 고무 등 강도를 높이는 배합제, 프린터 잉크 등 우리 실생활에 꼭 필요한 제품을 만드는데 쓰입니다.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="con_5">
+                        <div class="bgimg">
+                            <div class="wrapper">
+                                <img src="images/business/terminal.png" alt="">
+                            </div>
+                            <div class="con_5_txt">
+                                <h3>Oil Terminal <span class="impact">Business</span></h3>
+                                <h4>오일터미널사업</h4>
+                            </div>
+                        </div>
+                        <div class="con_5_info">
+                            <p>국내 정유사 최초 상업용 탱크터미널 사업</p>
+                            <span>FLOOD OIL은 울산신항에 5만 톤급(DWT 기준) 선박이 접안할 수 있는 부두시설과 총 28만 kl의 석유/석유화학제품을 저장할 수 있는 대규모 유류저장시설을 갖추고 있습니다. 2014년부터 FLOOD OIL은 전국 7개 저유소를 위탁운영하며 전국적인 네트워크를 갖추게 됐습니다. 국내는 물론 아시아를 오가는 석유/석유화학제품으로 저장사업의 범위를 확대하고 있습니다</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="footer">
+                <div class="footer_logo">
+                    <h2><img src="images/logo.png" alt="푸터이미지"></h2>
+                </div>
+                <div class="footer_container">
+                    <div class="footer_list">
+                        <a href="">이용약관</a>
+                        <a href="">개인정보처리방침</a>
+                        <a href="">사이트맵</a>
+                    </div>
+                    <div class="footer_info">
+                        <ul>
+                            <li>서울시 영등포구 당산동</li>
+                            <li>TEL : 12 - 3456 - 7890</li>
+                            <li>사업자등록번호 : 789-12-34567</li>
+                        </ul>
+                    </div>
+                    <p class="copyright">(C) FLOOD OIL CO. ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

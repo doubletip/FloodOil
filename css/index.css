@@ -1,0 +1,452 @@
+@charset "utf-8";
+@font-face {
+            font-family: 'NanumSquareR';
+            src: url('../fonts/NanumSquareR.ttf'),
+                url('../fonts/NanumSquareR.eot');
+}
+@font-face {
+            font-family: 'NanumSquareB';
+            src: url('../fonts/NanumSquareB.ttf'),
+                url('../fonts/NanumSquareB.eot');
+}
+@font-face {
+            font-family: 'NanumSquareEB';
+            src: url('../fonts/NanumSquareEB.ttf'),
+                url('../fonts/NanumSquareB.eot');
+}
+
+
+html,body{ margin:0; padding:0; width:100%; height:100%; font-family:'NanumSquareR'; }
+#wrap {width: 100%; height: 100%;position: relative;}
+.section{ width:100%; height:100%; position:relative; color:#ffffff;}
+.content {position: relative; top: 120px; width: 100%; height: 90%;}
+
+/*header*/
+header{position: fixed; width: 100%; height: 120px; z-index: 5; background: white; border-bottom:1px solid #eee;}
+nav {width: 100%; position: relative; margin: 0 auto;}
+
+/*header logo*/
+.nav_logo {position: absolute; left: 1%;}
+.nav_logo h1 {margin-top: 30px; color: white;}
+.nav_logo h1 img {width: 70%;}
+
+/*header gnb*/
+.nav_gnb {position: absolute; right: 1%;}
+.nav_gnb ul {position: relative;}
+.nav_gnb ul:after {display: block; clear: both; content:"";}
+.nav_gnb ul li {float:left;}
+.nav_gnb ul li a {display: inline-block; margin-right: 50px; line-height: 120px; color: black; font-size: 16px;}
+
+/*header mobile gnb*/
+.m_gnb{position: absolute; left: 100%; width: 100%; height: 100vh; background:darkorange; z-index: 500;}
+.toggle {text-align: right; font-size: 30px; height: 120px; line-height: 120px; position: absolute; right: 5%; z-index: 9840; display: none;}
+.toggle span {
+  display: block;
+  background: #000;
+  width: 42px;
+  height: 4px;
+  border-radius: 3px;
+  transition: 0.25s margin 0.25s, 0.25s transform;
+}
+.toggle span:nth-child(1) {
+    margin-top: 50px;
+    margin-bottom: 8px;
+}
+.toggle span:nth-child(3) {
+    margin-top: 8px;
+}
+
+.cng {height: 120px; line-height: 120px; position: absolute; right: 5%; z-index: 9840;display:none;}
+.cng span {
+  display: block;
+  background: #000;
+  width: 42px;
+  height: 4px;
+  border-radius: 3px;
+  transition: 0.25s margin 0.25s, 0.25s transform;
+}
+.cng span {
+    transition: 0.25s margin, 0.25s transform 0.25s;
+}
+.cng span:nth-child(1) {
+  margin-top: 60px;
+  margin-bottom: -4px;
+    transform: rotate(45deg);
+}
+.cng span:nth-child(2) {
+    transform: rotate(45deg);
+}
+.cng span:nth-child(3) {
+  margin-top: -4px;
+    transform: rotate(135deg);
+}
+
+.m_g_m {position: absolute; top: 250px; width: 100%;}
+.m_g_m li { width: 100%; line-height: 100px; }
+.m_g_m li a {display: block; text-align: center; font-size: 26px; color: white; font-weight: bold;}
+
+/*quick*/
+.quick {position: fixed; top: 35%; right: 1%; z-index: 50;transition:all 0.5s;}
+.quick ul {}
+.quick ul:after {display: block; content:""; clear: both;}
+.quick ul li { _padding: 10px 10px; margin: 30px 0; background: rgba(255,255,255,0.3); border-radius: 10px; width:15px; height:15px;}
+.active{background-color:#f15522 !important; height: 50px !important; transition:all 0.5s;}
+
+/*첫번째 화면*/
+.s1{width: 100%; height: 100%;}
+/*첫번째화면 이미지슬라이드*/
+#brandVisual{position: relative; width: 100%; height: 100%; margin: 0 auto; overflow: hidden;}
+#brandVisual::after {display: block; clear: both; content:"";}
+#brandVisual ul{position: relative; float: left; width: 100%; height: 100%; margin: 0; padding: 0;}
+#brandVisual li{position: absolute; width: 100%; height: 100%;}
+#brandVisual li a{display: block;}
+#brandVisual .visual01{left: 0; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../images/slide1.png"); background-size:cover; background-position:center center; background-repeat:no-repeat; }
+#brandVisual .visual02{left: 100%; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../images/slide2.png"); background-size:cover; background-position:center center; background-repeat:no-repeat;}
+#brandVisual .visual03{left: 200%; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../images/slide3.png"); background-size:cover; background-position:center center; background-repeat:no-repeat;}
+#buttonList{width: 100%;}
+#buttonList:after{content: ""; display: block; clear: both;}
+#buttonList li{background: url("../images/btnVisual.png") 0 -16px no-repeat; width: 14px; height: 15px; float: left; position: relative; left: 48%; top: -435px; overflow: hidden; margin: 0 5px; cursor: pointer;  }
+#buttonList li.on{background-position: 0 0;}
+#buttonList li a{display: block; text-indent: -999px;}
+
+
+/*첫번째화면 슬라이드 글씨*/
+.visual_txt {position: absolute; bottom: 500px; left: 50%; transform: translateX(-50%);  color: #fff; letter-spacing: 1px; font-weight: bold; text-align: center;}
+.vi_tit {font-size: 80px;}
+.vi_stit {font-size: 30px; line-height: 70px;}
+
+.scroll{position: absolute; bottom: 120px; left: 49.5%; transform: translateX(-50%); animation:mover 1s infinite alternate; width: 24px; height: 62px;}
+@keyframes mover {0% { transform: translateY(0px); } 
+                  100% { transform: translateY(10px); }}
+.scroll_txt {position: absolute; bottom: 70px; font-size: 18px; left: 50%; transform: translateX(-50%);}
+
+
+/*두번째 화면*/
+.s2 .content:after {display: block; clear: both; content:"";}
+.left {color: black; width: 40%; float:left; }
+.left_txt {width: 65%; margin-left: 25%; margin-top: 12%;}
+.left_txt p:before {content:""; display: block; height: 1px; width: 80px; border: 1px solid black; background: black; margin-bottom: 30px;}
+.left_txt p {font-size: 36px; font-weight: bold;}
+.left_txt span {font-size: 20px; margin-top: 50px; display: block; line-height: 30px;}
+
+.right {width: 60%; background: #f1f1f1; float:right;}
+.tab {display:inline-block; background: #f15522; margin-left: 3%; margin-top: 5%;}
+.tab a {color: white; padding: 15px 30px; display: inline-block;}
+
+.right_cont {width: 100%;  color: black; margin-top: 50px; margin-bottom: 50px;}
+.right_cont ul {width: 95%; margin-left: 3%;}
+.right_cont ul:after {display: block; content:""; clear: both;}
+.right_cont ul li {float:left; width: 32%; margin-right: 1%; position: relative;}
+.right_cont ul li a {}
+.right_cont ul li a img {width: 100%; height: 100%; vertical-align: bottom;}
+.right_cont ul li a iframe {width: 100%; height: 230px;}
+
+
+.bottom {width: 100%; }
+.bottom ul {}
+.bottom ul:after {display:block; clear: both; content:"";}
+.bottom ul li {float:left; width: 50%; position: relative; height: 535px; overflow: hidden;}
+.bottom ul li img {width: 100%; vertical-align: bottom; height: 535px; filter: brightness(0.5); overflow: hidden; transition:0.3s;}
+.bottom ul li img:hover {overflow: hidden; transform: scale(1.05); transition:0.3s;}
+.bottom ul li p {position: absolute; left: 50%; transform: translateX(-50%); color: #f15522; top: 150px; font-size: 40px; font-weight: bold;}
+.bottom ul li span {position: absolute; top: 250px; color: white; left: 50%; transform: translateX(-50%); font-size: 22px; width: 100%; text-align: center;}
+
+/*세번째 화면*/
+.s3 .content:after {display: block; clear: both; content:"";}
+.left_tab {color: black; position: relative; width: 15%; text-align: center; float:left; height: 100%; border-right: 1px solid black;}
+.left_tab:after {display: block; clear: both; content:"";}
+.left_tab ul {}
+.left_tab ul li { padding: 80px 0;}
+.left_tab ul li a {display: inline-block; font-size: 20px;}
+
+.content_area {float:left; position: relative; width: 85%;}
+.content_area:after {display: block; clear: both; content:"";}
+.center_tab {width: 50%; float:left; position: relative; color: black;}
+.list {position: absolute; top: 0; margin-top: 120px; margin-left: 50px;}
+.list h2 {font-size: 30px; color: #f15522;}
+.list h3 {font-size: 36px; margin-top: 30px; }
+.list p {font-size: 18px; margin-top: 20px; width: 70%; line-height: 25px;}
+.list a {margin-top: 50px; display: inline-block; padding: 10px 20px; border: 1px solid black;}
+
+.l2 {display:none;}
+.l3 {display:none;}
+.l4 {display:none;}
+.l5 {display:none;}
+
+.right_tab {width: 50%; float:right; position: relative;}
+.tab_img {position: relative; width: 100%;}
+
+.photo img {height: 1500px; overflow: hidden;}
+.i1 .photo1 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat; background-size: cover; height:1000px; width: 100%;  background-position: center center; display: block; overflow: hidden;} 
+.i1 .photo2 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat;background-size: cover; height:1000px; width: 100%;  background-position: center center; display: none; overflow:hidden;} 
+.i1 .photo3 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat;background-size: cover; height:1000px; width: 100%;  background-position: center center; display: none; overflow:hidden;}
+.i1 .photo4 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat;background-size: cover; height:1000px; width: 100%;  background-position: center center; display: none; overflow:hidden;}
+
+.i2 .photo1 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat; background-size: cover; height:1000px; width: 100%;  background-position: center center; display: block; overflow:hidden;} 
+.i2 .photo2 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat;background-size: cover; height:1000px; width: 100%;  background-position: center center; display: none; overflow:hidden;} 
+.i2 .photo3 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat;background-size: cover; height:1000px; width: 100%;  background-position: center center; display: none; overflow:hidden;}
+
+
+.i3 .photo1 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat; background-size: cover; height:1000px; width: 100%;  background-position: center center; display: block; overflow:hidden;} 
+.i3 .photo2 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat;background-size: cover; height:1000px; width: 100%;  background-position: center center; display: none; overflow:hidden;} 
+.i3 .photo3 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat;background-size: cover; height:1000px; width: 100%;  background-position: center center; display: none; overflow:hidden;}
+
+.i4 .photo1 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat; background-size: cover; height:1000px; width: 100%;  background-position: center center; display: block; overflow:hidden;} 
+.i4 .photo2 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat;background-size: cover; height:1000px; width: 100%;  background-position: center center; display: none; overflow:hidden;} 
+
+.i5 .photo1 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat; background-size: cover; height:1000px; width: 100%;  background-position: center center; display: block; overflow:hidden;} 
+.i5 .photo2 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat;background-size: cover; height:1000px; width: 100%;  background-position: center center; display: none; overflow:hidden;} 
+.i5 .photo3 {position: absolute; top: 0; right: 0; background-repeat:  no-repeat;background-size: cover; height:1000px; width: 100%;  background-position: center center; display: none; overflow:hidden;}
+
+
+.imgbtn {position: relative; top: 600px;}
+.imgbtn ul {position: absolute; top: 0; margin-left: 50px;}
+.imgbtn ul:after {display: block; clear: both; content:"";}
+.imgbtn ul li {float:left; height: 120px; overflow: hidden; max-width: 120px; min-height: 120px; margin-right: 20px;}
+.imgbtn ul li img {height: 120px; width: 120px;}
+
+.i2 {display:none;}
+.i3 {display:none;}
+.i4 {display:none;}
+.i5 {display:none;}
+
+.click2 {display:none;}
+.click3 {display:none;}
+.click4 {display:none;}
+.click5 {display:none;}
+
+.s4 .content {background:#ebebeb;}
+.container {width: 90%; margin: 0 auto; padding-top: 80px;}
+.container .talent {text-align: center; font-size: 32px; text-transform: uppercase; color: black;}
+
+.re_list {margin-top: 40px;}
+.re_list ul {position: relative; width: 100%;}
+.re_list ul:after {display: block; clear: both; content:"";}
+.re_list ul li {float:left; width: 32.3%; margin: 0.5%;}
+.re_list ul li img {width: 100%; vertical-align: bottom;}
+
+.re_list ul li .list_txt {background: white; height: 150px; padding-left: 30px;}
+.re_list ul li .list_txt .t_tit  { font-weight: bold; font-size: 25px; padding-top: 20px;}
+.re_list ul li .list_txt .t_stxt {font-size: 19px; padding-top: 15px;}
+.re_list ul li .list_txt .year {font-size: 16px; color:black; padding-top: 10px;}
+.year span {font-weight: bold; padding-top: 5px;}
+.re_list1 {position: relative; color: black;}
+.bar {width: 100%; height: 4px; background: #f15522; display: block; content:""; position: absolute; bottom: 0; transition:0.5s;}
+.b1 {opacity: 0;}
+.b2 {opacity: 0;}
+.b3 {opacity: 0;}
+.re_list2 {position: relative; color: black; transition:0.5s;}
+.re_list3 {position: relative; color: black; transition:0.5s;}
+
+/*footer*/
+.footer {height: 160px; background:black; width: 100%; position: absolute; bottom: 0;}
+.footer:after {display: block; clear: both; content:"";}
+.footer_logo {float:left; margin-top: 50px; width: 20%; padding-left: 5%;}
+.footer_container {width: 80%; float:left; margin-top: 50px;}
+.footer_list { padding-left: 5%;font-size: 18px; font-weight: bold;}
+.footer_info {padding-left: 5%; font-size: 16px; line-height: 40px;}
+.footer_info ul {}
+.footer_info ul:after {content:""; display: block; clear: both;}
+.footer_info ul li {float:left; font-size: 16px; line-height: 40px; margin-right: 15px;}
+
+.copyright {padding-left: 5%;}
+
+
+
+
+
+@media screen and (min-width:1024px) and (max-width:1440px) {
+    
+    .visual_txt { bottom: 400px;}
+    .vi_tit {font-size: 68px;}
+    .vi_stit {font-size: 28px; line-height: 70px;}
+    #buttonList li{ left: 46%; top: -355px;}
+    .scroll{left: 49%;}
+    .scroll_txt {font-size: 17px;}
+    
+    .left_txt p:before {width: 70px;}
+    .left_txt p {font-size: 30px;}
+    .left_txt span {font-size: 18px;}
+    .imgtxt {font-size: 15px;}
+    .imgdate {font-size: 15px; top: 25%;}
+    
+    .bottom ul li p {font-size: 34px;}
+    .bottom ul li span {font-size: 17px; top: 270px;}
+    
+    .left_tab ul li a {font-size: 18px;}
+    .list h2 {font-size: 22px;}
+    .list h3 {font-size: 26px; width: 90%;}
+    .list p {font-size: 16px; width: 80%;}
+    
+    .re_list ul li .list_txt {height: 180px; padding-left: 20px;}
+    .re_list ul li .list_txt .t_tit {font-size: 22px;}
+    .re_list ul li .list_txt .t_stxt {font-size: 16px;}
+    .re_list ul li .list_txt .year {font-size: 14px;}
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .nav_logo h1 img {width: 60%;}
+    .nav_gnb ul li a { margin-right: 40px; font-size: 15px;}
+    
+    
+    .quick {display: none;}
+    .visual_txt { bottom: 400px;}
+    .vi_tit {font-size: 51px;}
+    .vi_stit {font-size: 22px; line-height: 60px;}
+    #buttonList li{  left: 46%; top: -355px;}
+    .scroll{left: 49%;}
+    .scroll_txt {font-size: 16px;}
+    
+    .left_txt {margin-left: 0%; padding-left: 5%; width: 90%;}
+    .left_txt p:before {width: 70px;}
+    .left_txt p {font-size: 30px;}
+    .left_txt span {font-size: 18px; margin-top: 25px;}
+    
+    .bottom ul li p {font-size: 32px;}
+    .bottom ul li span {font-size: 15px; top: 270px; width: 68%;}
+    
+    .left_tab {width: 25%;}
+    .left_tab ul li a {font-size: 15px;}
+    .content_area {width: 75%;}
+    .right_tab {width: 100%; float:none; top: 0; }
+    .i1 .photo1 {height: 500px; background-position: 100% 100%;}
+    .i1 .photo2 {height: 500px; background-position: 100% 100%;}
+    .i1 .photo3 {height: 500px; background-position: 100% 100%;}
+    .i1 .photo4 {height: 500px; background-position: 100% 100%;}
+    
+    .i2 .photo1 {height: 500px; background-position: 100% 100%;}
+    .i2 .photo2 {height: 500px; background-position: 100% 100%;}
+    .i2 .photo3 {height: 500px; background-position: 100% 100%;}
+    
+    .i3 .photo1 {height: 500px; background-position: 100% 100%;}
+    .i3 .photo2 {height: 500px; background-position: 100% 100%;}
+    .i3 .photo3 {height: 500px; background-position: 100% 100%;}
+    
+    .i4 .photo1 {height: 500px; background-position: 100% 100%;}
+    .i4 .photo2 {height: 500px; background-position: 100% 100%;}
+    
+    .i5 .photo1 {height: 500px; background-position: 100% 100%;}
+    .i5 .photo2 {height: 500px; background-position: 100% 100%;}
+    .i5 .photo3 {height: 500px; background-position: 100% 100%;}
+    
+    .imgbtn {display: none;}
+    .center_tab {width: 100%;}
+    .list {margin-top: 520px;}
+    .list h2 {font-size: 22px;}
+    .list h3 {font-size: 26px;}
+    .list p {font-size: 16px; width: 90%;}
+    .list a {margin-top: 30px; padding: 15px 30px;}
+    
+    .re_list {margin-top: 80px;}
+    .re_list1 {display: none;}
+    .re_list ul li {width: 49%;}
+    .re_list ul li .list_txt {height: 180px; padding-left: 20px;}
+    .re_list ul li .list_txt .t_tit {font-size: 22px;}
+    .re_list ul li .list_txt .t_stxt {font-size: 16px;}
+    .re_list ul li .list_txt .year {font-size: 14px;}
+    
+    .footer_list {font-size: 15px;}
+    .footer_info ul li {font-size: 13px;}
+    .copyright {font-size: 13px;}
+    
+}
+
+@media screen and (min-width:400px) and (max-width:767px) {
+    .nav_logo h1 img {width: 60%;}
+    .nav_gnb {display: none;}
+    .toggle {display: block;}
+    .quick {display: none;}
+    .visual_txt { bottom: 400px;}
+    .vi_tit {font-size: 25px;}
+    .vi_stit {font-size: 17px; line-height: 30px;}
+    #buttonList li{ left: 40%; top: -355px;}
+    .scroll{display: none;}
+    .scroll_txt {display: none;}
+    
+    .right {width: 100%;}
+    .left {width: 100%; padding-bottom: 20px;}
+    .left_txt {margin-left: 0%; padding-left: 5%; width: 100%; margin-top: 0%;}
+    .left_txt p:before {width: 70px;}
+    .left_txt p {font-size: 22px;}
+    .left_txt span {font-size: 16px; margin-top: 25px; line-height: 25px;}
+    .tab a {padding: 10px 20px; font-size: 15px;}
+    
+    .right_cont {margin-top: 30px;}
+    .right_cont ul li {width: 49%;}
+    .right_cont ul li:nth-child(3){display: none;}
+    
+    .bottom ul li {width: 100%; height: 200px;}
+    .bottom ul li p {font-size: 30px; top: 30px;}
+    .bottom ul li span {font-size: 14px; top: 100px; width: 61%;}
+    
+    .left_tab {width: 100%; float:none; height: 100px; border-right: none;}
+    .left_tab ul:after {display: block; clear: both; content:"";}
+    .left_tab ul li {float:left; padding: 15px 0; width: 50%;}
+    .left_tab ul li a {font-size: 14px;}
+    
+    .content_area {width: 100%;}
+    .right_tab {width: 100%; float:none; top: 0;}
+    .i1 .photo1 {height: 400px; background-position: 50% 50%;}
+    .i1 .photo2 {height: 400px; background-position: 50% 50%;}
+    .i1 .photo3 {height: 400px; background-position: 50% 50%;}
+    .i1 .photo4 {height: 400px; background-position: 50% 50%;}
+    
+    .i2 .photo1 {height: 400px; background-position: 50% 50%;}
+    .i2 .photo2 {height: 400px; background-position: 50% 50%;}
+    .i2 .photo3 {height: 400px; background-position: 50% 50%;}
+    
+    .i3 .photo1 {height: 400px; background-position: 50% 50%;}
+    .i3 .photo2 {height: 400px; background-position: 50% 50%;}
+    .i3 .photo3 {height: 400px; background-position: 50% 50%;}
+    
+    .i4 .photo1 {height: 400px; background-position: 50% 50%;}
+    .i4 .photo2 {height: 400px; background-position: 50% 50%;}
+    
+    .i5 .photo1 {height: 400px; background-position: 50% 50%;}
+    .i5 .photo2 {height: 400px; background-position: 50% 50%;}
+    .i5 .photo3 {height: 400px; background-position: 50% 50%;}
+    
+    .photo img {height: 400px; width: 100%;}
+    .imgbtn {display: none;}
+    .center_tab {width: 100%;}
+    .list {margin-top: 420px;}
+    .list h2 {font-size: 20px;}
+    .list h3 {font-size: 24px;}
+    .list p {display: none;}
+    .list a {margin-top: 20px; padding: 10px 30px;}    
+    
+    
+    
+    .container .talent {font-size: 22px;}
+    .re_list ul li {margin:0 auto; width: 70%; transform: translateX(-50%); position: relative; left: 50%; padding-top: 10px;}
+    .re_list ul li img {width: 100%; margin: 0 auto;}
+    .re_list1 {display: none;}
+    .re_list ul li .list_txt {height: 80px; padding-left: 15px;}
+    .re_list ul li .list_txt .t_tit {font-size: 18px; padding-top: 10px;}
+    .re_list ul li .list_txt .t_stxt {font-size: 14px; padding-top: 10px;}
+    .re_list ul li .list_txt .year {display: none;}
+    .footer {position: relative; height: 316px;}
+    .footer_container {width: 100%;}
+    .footer_logo {float:none; width: 100%; text-align: center;}
+    .footer_logo img {padding-top: 10px;}
+    .footer_list {padding-left: 0%; text-align: center; font-size: 15px; line-height: 30px;}
+    .footer_info ul li {font-size: 13px; width: 100%; text-align: center; line-height: 25px;}
+    .copyright {padding-left: 0%; text-align: center; font-size: 13px;}
+    .content { height: 100%;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

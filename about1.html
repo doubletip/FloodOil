@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>FLOOD OIL > About us</title>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    
+    
+    
+    <script>     
+        $(document).ready(function(){
+            $(".nav_gnb>ul>li").click(function(){
+                var j = $(this).index();
+                $(".quick>ul>li").removeClass("active");
+                $(".quick>ul>li").eq(j).addClass("active");
+            }); 
+            
+            $('.toggle').click(function(){
+                $(this).toggleClass('cng');
+                $(".m_gnb").stop().animate({left:"100%"},1000);
+                $(".toggle span").css("background-color","#000");
+                 
+            });
+            
+            $(document).on("click", ".cng", function(){
+                $(".m_gnb").stop().animate({left:"0px"},1000);
+                $(".cng span").css("background-color","#fff");
+            });
+            
+            /*숫자올라가는스크립트*/
+            $(window).scroll(function(){
+                var ht = $(".info").offset().top;
+                var st = $(window).scrollTop();
+                
+                if(st > ht+10 && st < ht+20){
+                    var memberCountConTxt= 100;
+                    var sct = $(window).scrollTop();
+                    $({ val : 0 }).animate({ val : memberCountConTxt }, {
+                        duration: 2000,
+                        step: function() {
+                        var num = numberWithCommas(Math.floor(this.val));
+                        $(".memberCountCon").text(num);
+                        },
+                        complete: function() {
+                        var num = numberWithCommas(Math.floor(this.val));
+                        $(".memberCountCon").text(num);
+                        }
+                    });
+                }
+            });
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            
+        });
+                          
+    </script>
+    
+    
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <nav>
+                <div class="nav_logo"><h1><a href="index.html"><img src="images/logo.png" alt="로고이미지"></a></h1></div>
+                <div class="toggle">
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                    </div>
+                <div class="nav_gnb">
+                    <ul>
+                        <li><a href="about1.html">About us</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="talent.html">Recruitment</a></li>
+                        <li><a href="notice.html">Notice</a></li>
+                    </ul>
+                </div>
+                <div class="m_gnb">
+                    <ul class="m_g_m">
+                        <li><a href="about1.html">About us</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="talent.html">Recruitment</a></li>
+                        <li><a href="notice.html">Notice</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+       
+        <div class="container">
+            <div class="key_image">
+                <h2>About us</h2>
+                <p>전문역량과 리더십을 겸비한 리더</p>
+            </div>
+            
+            <div class="info">
+                <div class="breadcrumb">
+                    <i class="fas fa-home"></i><span>> About us</span>
+                </div>
+                <div class="cont_t">
+                    <ul>
+                        <li>
+                            <img src="images/about/txtimg.png" alt="about이미지">
+                        </li>
+                        <li>
+                            <h3>대한민국도 석유 강국이다!</h3>
+                            <p>FLOOD OIL 9개국 13개 광구 및 4개 LNG 프로젝트에서
+무자원 산유국의 꿈을 키워가고 있습니다. <br>
+확인 매장량 기준 총 5억 1천만 환산배럴(18년말 기준)의 원유를 확보한 FLOOD OIL은
+자원 불모지인 대한민국의 에너지원 확보 및 경제 성장에 기여하고 있습니다.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="cont_c">
+                    <ul>
+                        <li style="background:#5252;">
+                           <div class="txtarea">
+                               <span class="memberCountCon"></span><span class="c_tit">여개 국가</span>
+                           </div>
+                            <p class="c_sub">전세계 100여개 국에 수출하여 <br>FLOOD OIL석유를 사용하고 있습니다.</p>
+                        </li>
+                        <li>
+                            <div class="txtarea">
+                                <span class="c_ttit">1</span><span class="c_tit">위</span>
+                            </div>
+                            <p class="c_sub">국내 정유사 중 유일하게<br> 상업 유류저장 사업에 진출하였습니다.</p>
+                        </li>
+                        <li>
+                            <div class="txtarea">
+                                <span class="c_ttit">30</span><span class="c_tit">조</span>
+                            </div>
+                            <p class="c_sub">매출액 <br>(2018년 12월 기준)</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="cont_b">
+                    <div class="b_container">
+                        <h3>FLOOD OIL 연혁</h3>
+                        <div class="b_list">
+                            <ul class="history1">
+                                <li>2019. 08.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DA(Solvent De-Asphalting) 공정 준공</li>
+                                <li>2018. 12.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;모바일 랩 서비스 개시</li>
+                                <li>2017. 05.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;재해 1000만 인시 달성</li>
+                                <li>2016. 02.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLOOD OIL MX공장 준공</li>
+                                <li>2015. 11.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015 대한민국 전기안전대상 수상</li>
+                                <li>2015. 10.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015 녹색경영대상 대통령상 수상</li>
+                                <li>2015. 09.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21회 기업혁신대상 대통령상 수상</li>
+                                <li>2014. 08.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLOOD OIL 윤활기유 공장 상업가동</li>
+                            </ul>
+                            <ul class="history2">
+                                <li>2013. 01.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLOOD OIL터미널 상업가동, 유류저장사업 진출</li>
+                                <li>2012. 05.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;윤활유사업 진출, 엑스티어 론칭</li>
+                                <li>2011. 09.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제1회 대한민국 지식대상 대통령상 수상</li>
+                                <li>2011. 03.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;판교 중앙기술연구원 건립</li>
+                                <li>2010. 07.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제2고도화 시설 상업가</li>
+                                <li>2009. 01.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLOOD OIL 설립</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+            
+            <div class="footer">
+                <div class="footer_logo">
+                    <h2><img src="images/logo.png" alt="푸터이미지"></h2>
+                </div>
+                <div class="footer_container">
+                    <div class="footer_list">
+                        <a href="">이용약관</a>
+                        <a href="">개인정보처리방침</a>
+                        <a href="">사이트맵</a>
+                    </div>
+                    <div class="footer_info">
+                        <ul>
+                            <li>서울시 영등포구 당산동</li>
+                            <li>TEL : 12 - 3456 - 7890</li>
+                            <li>사업자등록번호 : 789-12-34567</li>
+                        </ul>
+                    </div>
+                    <p class="copyright">(C) FLOOD OIL CO. ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
