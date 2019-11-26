@@ -417,7 +417,9 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .list p {display: none;}
     .list a {margin-top: 20px; padding: 10px 30px; border: 1px solid #fff; color: white;}    
     
-    
+    .s4 .content {
+    margin-top: 180px;
+}
     
     .container .talent {font-size: 22px;}
     .re_list ul li {margin:0 auto; width: 70%; transform: translateX(-50%); position: relative; left: 50%; padding-top: 10px;}
