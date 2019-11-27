@@ -239,17 +239,15 @@ nav {width: 100%; position: relative; margin: 0 auto;}
 .re_list3 {position: relative; color: black; transition:0.5s;}
 
 /*footer*/
-.footer {height: 160px; background:black; width: 100%; position: absolute; bottom: 0;}
-.footer:after {display: block; clear: both; content:"";}
-.footer_logo {float:left; margin-top: 50px; width: 20%; padding-left: 5%;}
-.footer_container {width: 80%; float:left; margin-top: 50px;}
-.footer_list { padding-left: 5%;font-size: 18px; font-weight: bold;}
-.footer_info {padding-left: 5%; font-size: 16px; line-height: 40px;}
-.footer_info ul {}
-.footer_info ul:after {content:""; display: block; clear: both;}
-.footer_info ul li {float:left; font-size: 16px; line-height: 40px; margin-right: 15px;}
-
-.copyright {padding-left: 5%;}
+.footer {height: 160px; background:black; width: 100%; position: relative; bottom: 0; color: white;}
+.footer_logo {position: absolute; left: 1%;}
+.footer_logo h2 {margin-top: 30px;}
+.footer_logo h2 img {width: 70%;}
+.footer_container {margin: 0 auto; padding-top: 30px; padding-left: 20%;}
+.footer_list {font-size: 18px; font-weight: bold; position: relative;}
+.footer_info {position: relative;}
+.footer_info ul:after {display: block; content:""; clear: both;}
+.footer_info ul li {font-size: 16px; float:left; line-height: 40px; margin-right: 15px;}
 
 
 
@@ -345,6 +343,14 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .re_list ul li .list_txt .t_stxt {font-size: 16px;}
     .re_list ul li .list_txt .year {font-size: 14px;}
     
+    .footer_container {padding-left: 30%;}
+    .footer_logo h2 img {width: 6    .footer {position: relative; height: 316px;}
+    .footer_logo {left: 50%; transform: translateX(-50%); text-align: center;}
+    .footer_logo h2 img {width: 70%;}
+    .footer_container {padding-top: 150px; padding-left: 10%;}
+    .footer_list {font-size: 14px;}
+    .footer_info ul li {font-size: 12px;}
+    .copyright {font-size: 12px;}0%;}
     .footer_list {font-size: 15px;}
     .footer_info ul li {font-size: 13px;}
     .copyright {font-size: 13px;}
@@ -430,12 +436,12 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .re_list ul li .list_txt .t_stxt {font-size: 14px; padding-top: 10px;}
     .re_list ul li .list_txt .year {display: none;}
     .footer {position: relative; height: 316px;}
-    .footer_container {width: 100%;}
-    .footer_logo {float:none; width: 100%; text-align: center;}
-    .footer_logo img {padding-top: 10px;}
-    .footer_list {padding-left: 0%; text-align: center; font-size: 15px; line-height: 30px;}
-    .footer_info ul li {font-size: 13px; width: 100%; text-align: center; line-height: 25px;}
-    .copyright {padding-left: 0%; text-align: center; font-size: 13px;}
+    .footer_logo {left: 50%; transform: translateX(-50%); text-align: center;}
+    .footer_logo h2 img {width: 70%;}
+    .footer_container {padding-top: 150px; padding-left: 10%;}
+    .footer_list {font-size: 14px;}
+    .footer_info ul li {font-size: 12px;}
+    .copyright {font-size: 12px;}
     .content { height: 100%;}
 }
 

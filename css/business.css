@@ -192,16 +192,14 @@ nav {width: 100%; position: relative; margin: 0 auto;}
 
 /*footer*/
 .footer {height: 160px; background:black; width: 100%; position: relative; bottom: 0; color: white;}
-.footer:after {display: block; clear: both; content:"";}
-.footer_logo {float:left; margin-top: 50px; width: 20%; padding-left: 5%;}
-.footer_container {width: 80%; float:left; margin-top: 50px;}
-.footer_list { padding-left: 5%;font-size: 18px; font-weight: bold;}
-.footer_info {padding-left: 5%; font-size: 16px; line-height: 40px;}
-.footer_info ul {}
-.footer_info ul:after {content:""; display: block; clear: both;}
-.footer_info ul li {float:left; font-size: 16px; line-height: 40px; margin-right: 15px;}
-
-.copyright {padding-left: 5%;}
+.footer_logo {position: absolute; left: 1%;}
+.footer_logo h2 {margin-top: 30px;}
+.footer_logo h2 img {width: 70%;}
+.footer_container {margin: 0 auto; padding-top: 30px; padding-left: 20%;}
+.footer_list {font-size: 18px; font-weight: bold; position: relative;}
+.footer_info {position: relative;}
+.footer_info ul:after {display: block; content:""; clear: both;}
+.footer_info ul li {font-size: 16px; float:left; line-height: 40px; margin-right: 15px;}
 
 
 @media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none){
@@ -338,7 +336,8 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .con_5_info span {font-size: 16px;  line-height: 30px; }
     
     
-    
+    .footer_container {padding-left: 30%;}
+    .footer_logo h2 img {width: 60%;}
     .footer_list {font-size: 15px;}
     .footer_info ul li {font-size: 13px;}
     .copyright {font-size: 13px;}
@@ -357,7 +356,7 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .con_1 .bgimg {width: 100%; float:none;}
     .con_1 .bgimg img {height: 400px;}
     .con_1_txt {top: 50px; left: 20px;}
-    .con_1_txt h3 {font-size: 40px;}
+    .con_1_txt h3 {font-size: 36px;}
     .con_1_txt h4 {font-size: 16px; color: #fff;}
     .con_1_info { width: 100%; float:none; padding-left: 3%;}
     .con_1_info p {font-size: 18px; line-height: 70px;}
@@ -368,7 +367,7 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .con_2 .bgimg {width: 100%; float:none;}
     .con_2 .bgimg img {height: 400px;}
     .con_2_txt {top: 50px; left: 20px;}
-    .con_2_txt h3 {font-size: 40px;}
+    .con_2_txt h3 {font-size: 36px;}
     .con_2_txt h4 {font-size: 18px; color: #fff; text-align: left;}
     .con_2_info { width: 100%; float:none; padding-left: 3%;}
     .con_2_info p {font-size: 18px; line-height: 70px;}
@@ -379,7 +378,7 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .con_3 .bgimg {width: 100%; float:none;}
     .con_3 .bgimg img {height: 400px;}
     .con_3_txt {top: 50px; left: 20px;}
-    .con_3_txt h3 {font-size: 40px;}
+    .con_3_txt h3 {font-size: 36px;}
     .con_3_txt h4 {font-size: 18px; color: #fff;}
     .con_3_info { width: 100%; float:none; padding-left: 3%;}
     .con_3_info p {font-size: 18px; line-height: 70px;}
@@ -390,7 +389,7 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .con_4 .bgimg {width: 100%; float:none;}
     .con_4 .bgimg img {height: 400px;}
     .con_4_txt {top: 50px; left: 20px;}
-    .con_4_txt h3 {font-size: 40px;}
+    .con_4_txt h3 {font-size: 36px;}
     .con_4_txt h4 {font-size: 18px; color: #fff; text-align: left;}
     .con_4_info { width: 100%; float:none; padding-left: 3%;}
     .con_4_info p {font-size: 18px; line-height: 70px;}
@@ -401,7 +400,7 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .con_5 .bgimg {width: 100%; float:none;}
     .con_5 .bgimg img {height: 400px;}
     .con_5_txt {top: 50px; left: 20px;}
-    .con_5_txt h3 {font-size: 40px;}
+    .con_5_txt h3 {font-size: 36px;}
     .con_5_txt h4 {font-size: 18px; color: #fff;}
     .con_5_info { width: 100%; float:none; padding-left: 3%;}
     .con_5_info p {font-size: 18px; line-height: 70px;}
@@ -410,12 +409,12 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     
     
     .footer {position: relative; height: 316px;}
-    .footer_container {width: 100%;}
-    .footer_logo {float:none; width: 100%; text-align: center;}
-    .footer_logo img {padding-top: 10px;}
-    .footer_list {padding-left: 0%; text-align: center; font-size: 15px; line-height: 30px;}
-    .footer_info ul li {font-size: 13px; width: 100%; text-align: center; line-height: 25px;}
-    .copyright {padding-left: 0%; text-align: center; font-size: 13px;}
+    .footer_logo {left: 50%; transform: translateX(-50%); text-align: center;}
+    .footer_logo h2 img {width: 70%;}
+    .footer_container {padding-top: 150px; padding-left: 10%;}
+    .footer_list {font-size: 14px;}
+    .footer_info ul li {font-size: 12px;}
+    .copyright {font-size: 12px;}
 }
 
 

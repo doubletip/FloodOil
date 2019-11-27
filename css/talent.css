@@ -142,7 +142,7 @@ nav {width: 100%; position: relative; margin: 0 auto;}
 .smtxt p {margin-top: 50px; padding-right: 30px;}
 .click_container {display: none;}
 .click_container.on {display: block;}
-.bg_box{position: fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.7); top: 0; left: 0; z-index: 6;}
+.bg_box{position: fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.7); top: 0; left: 0; z-index: 1;}
 .bg_box h3{position: absolute; width: 100%; text-align: center; font-size: 100px; top: 250px; color: rgba(255,255,255,0.9);}
 .bg_box i{cursor: pointer;}
 
@@ -157,7 +157,7 @@ nav {width: 100%; position: relative; margin: 0 auto;}
 .tg ul li .part {font-size: 20px; line-height: 40px;}
 .tg ul li i {position: absolute; right: 2%; top: 0; font-size: 30px; line-height: 120px; transition: 0.3s; transform: rotate(45deg);}
 .tg ul li i.active{transform: rotate(90deg); display: block;}
-.tg ul li .add {display: none; position: relative; background: #fff; width: 100%;z-index: 9; margin-top: 20px;line-height: 28px; font-size: 20px; margin-bottom: 20px;}
+.tg ul li .add {display: none; position: relative; background: #fff; width: 100%;z-index: 1; margin-top: 20px;line-height: 28px; font-size: 20px; margin-bottom: 20px;}
 .tg ul li .add p{font-weight: bold; text-indent: 20px;}
 .tg ul li .add span{text-indent: 20px; display: block;}
 .tg ul li .add.active{display: block;}
@@ -165,16 +165,15 @@ nav {width: 100%; position: relative; margin: 0 auto;}
 
 /*footer*/
 .footer {height: 160px; background:black; width: 100%; position: relative; bottom: 0; color: white;}
-.footer:after {display: block; clear: both; content:"";}
-.footer_logo {float:left; margin-top: 50px; width: 20%; padding-left: 5%;}
-.footer_container {width: 80%; float:left; margin-top: 50px;}
-.footer_list { padding-left: 5%;font-size: 18px; font-weight: bold;}
-.footer_info {padding-left: 5%; font-size: 16px; line-height: 40px;}
-.footer_info ul {}
-.footer_info ul:after {content:""; display: block; clear: both;}
-.footer_info ul li {float:left; font-size: 16px; line-height: 40px; margin-right: 15px;}
+.footer_logo {position: absolute; left: 1%;}
+.footer_logo h2 {margin-top: 30px;}
+.footer_logo h2 img {width: 70%;}
+.footer_container {margin: 0 auto; padding-top: 30px; padding-left: 20%;}
+.footer_list {font-size: 18px; font-weight: bold; position: relative;}
+.footer_info {position: relative;}
+.footer_info ul:after {display: block; content:""; clear: both;}
+.footer_info ul li {font-size: 16px; float:left; line-height: 40px; margin-right: 15px;}
 
-.copyright {padding-left: 5%;}
 
 
 
@@ -245,6 +244,8 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .bg_box h3{font-size: 60px; top: 200px;}
     .tg ul li .add  {font-size: 15px; line-height: 30px;}
     
+    .footer_container {padding-left: 30%;}
+    .footer_logo h2 img {width: 60%;}
     .footer_list {font-size: 15px;}
     .footer_info ul li {font-size: 13px;}
     .copyright {font-size: 13px;}
@@ -283,23 +284,23 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     .tg ul li .part {font-size: 14px;}
     .tg ul li i {font-size: 20px; line-height: 80px;}
     
-    .click {width: 90%; top: 17%;}
+    .click {width: 90%; top: 25%;}
     .mtxt {font-size: 20px; margin-top: 30px;}
     .mtxt:before {width: 30px;}
     .smtxt {font-size: 14px; line-height: 24px; padding-left: 20px;}
     .smtxt p {margin-top: 30px; letter-spacing: 0.5px;}
-    .bg_box h3{font-size: 40px; top: 50px;}
+    .bg_box h3{font-size: 40px; top: 150px;}
     .tg ul li .add  {font-size: 14px; line-height: 25px;}
     .tg ul li .add p {text-indent: 10px;}
     .tg ul li .add span {text-indent: 10px;}
     
     .footer {position: relative; height: 316px;}
-    .footer_container {width: 100%;}
-    .footer_logo {float:none; width: 100%; text-align: center;}
-    .footer_logo img {padding-top: 10px;}
-    .footer_list {padding-left: 0%; text-align: center; font-size: 15px; line-height: 30px;}
-    .footer_info ul li {font-size: 13px; width: 100%; text-align: center; line-height: 25px;}
-    .copyright {padding-left: 0%; text-align: center; font-size: 13px;}
+    .footer_logo {left: 50%; transform: translateX(-50%); text-align: center;}
+    .footer_logo h2 img {width: 70%;}
+    .footer_container {padding-top: 150px; padding-left: 10%;}
+    .footer_list {font-size: 14px;}
+    .footer_info ul li {font-size: 12px;}
+    .copyright {font-size: 12px;}
 }
 
 
