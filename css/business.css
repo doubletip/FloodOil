@@ -83,7 +83,7 @@ nav {width: 100%; position: relative; margin: 0 auto;}
     transform: rotate(135deg);
 }
 
-.m_g_m {position: absolute; top: 200px; width: 100%;}
+.m_g_m {position: absolute; top: 250px; width: 100%;}
 .m_g_m li { width: 100%; line-height: 100px; }
 .m_g_m li a {display: block; text-align: center; font-size: 26px; color: white; font-weight: bold;}
 
