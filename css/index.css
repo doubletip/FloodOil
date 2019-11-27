@@ -239,7 +239,7 @@ nav {width: 100%; position: relative; margin: 0 auto;}
 .re_list3 {position: relative; color: black; transition:0.5s;}
 
 /*footer*/
-.footer {height: 160px; background:black; width: 100%; position: relative; bottom: 0; color: white;}
+.footer {height: 160px; background:black; width: 100%; position: absolute; bottom: 0; color: white;}
 .footer_logo {position: absolute; left: 1%;}
 .footer_logo h2 {margin-top: 30px;}
 .footer_logo h2 img {width: 70%;}
