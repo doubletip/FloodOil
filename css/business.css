@@ -204,7 +204,14 @@ nav {width: 100%; position: relative; margin: 0 auto;}
 .copyright {padding-left: 5%;}
 
 
-
+@media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none){
+    
+    .con_1_txt h3{ color: #f15522;}
+    .con_2_txt h3{ color: #f15522;}
+    .con_3_txt h3{ color: #f15522;}
+    .con_4_txt h3{ color: #f15522;}
+    .con_5_txt h3{ color: #f15522;}
+}
 
 
 @media screen and (min-width:1024px) and (max-width:1440px) {
